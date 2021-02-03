@@ -1,0 +1,91 @@
+{% extends 'base.html' %} 
+{% load static %} 
+{% block mycss %}
+    <link rel="stylesheet" href="{% static 'css/loginstyle.css' %}" /> 
+{% endblock %} 
+{% block content %}
+
+
+<div class="loginreg">
+    <div class="container">
+        <div id="box">
+            <div id="content" class="row">
+                <div id="box_left" class="col">
+                    <h1>Register</h1>
+                    <div id="login"> Insert your account informations: <br>
+                        <form name="register" action="#" method="GET" accept-charset="utf-8">
+                            <div class="form-group">
+                                <input type="text" placeholder="Username" id="user" class="register user"
+                                    title="Username" required>
+                            </div>
+                            <div class="form-group">
+                                <input type="email" placeholder="Email" id="email" class="register email" title="Email"
+                                    required>
+                            </div>
+                            <div class="form-group">
+                                <input type="password" name="password" id="password" placeholder="Password"
+                                    class="register password" title="Password" required>
+                            </div>
+                            <div class="form-group">
+                                <input type="password" name="repeat_password" id="rpassword"
+                                    placeholder="Confirm Password" class="register password" title="Repeat Password"
+                                    required>
+                                <!-- Label for PopupBox -->
+                            </div>
+                            <div class="form-group">
+                                <label for="terms" class="check_terms" id="lblAssociateWithCheckBox"
+                                    title="Terms of Use"> <input type="checkbox" class="check_box" id="terms" required>
+                                    I agree to the <a href="#" id="tou">Terms & Conditions </a>and<a href="#" id="pp">
+                                        Privacy Policy</a>.</label>
+                            </div>
+                            <input type="submit" value="Register" class="btn_register">
+                        </form>
+                    </div>
+                </div>
+                <div id="box_right" class="col">
+                    <h1>Login</h1>
+                    <div class="social"> Login using social network: <br>
+                        <a href="#" class="fb btn">
+                            <i class="fab fa-facebook-f"></i> Login with Facebook
+                        </a>
+                        <a href="#" class="google btn">
+                            <i class="fab fa-google"></i> Login with Google
+                        </a>
+                    </div>
+                    <div id="login1"> Or insert your account informations: <br>
+                        <form name="login" action="#" method="GET" accept-charset="utf-8">
+                            <div class="form-group">
+                                <input type="text" placeholder="Username" id="l_user" class="login user"
+                                    title="Username" required>
+                            </div>
+                            <div class="form-group">
+                                <input type="password" name="password" placeholder="Password" id="l_password"
+                                    class="login password" title="Password" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="logged" class="check_logged" id="lblAssociateWithCheckBox"
+                                    title="Keep me logged in"> <input type="checkbox" class="check_box" id="logged">
+                                    Keep me logged in</label>
+                            </div>
+                            <input type="submit" value="Login" class="btn_login">
+                        </form>
+                    </div>
+                    <div id="bottom_text"> Don't have an account?
+                        <a href="javascript:document.getElementById('user').focus()"
+                            title="Create new account">Register</a>. <br>Forgot your <a href="#"
+                            title="Recovery Password">Password</a> or <a href="#"
+                            title="Recovery Username">Username</a>?
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+{% endblock %}

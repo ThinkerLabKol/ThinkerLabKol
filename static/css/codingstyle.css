@@ -1,0 +1,351 @@
+@import url('https://fonts.googleapis.com/css?family=Josefin+Sans:300,400,500,600,700,800&display=swap');
+*{
+	font-family: 'Josefin Sans';
+}
+html{
+	scroll-behavior: smooth;
+}
+body{
+	overflow-y: scroll;
+	overflow-x: hidden;
+	max-width: 100%;
+}
+.navbar-brand{
+  margin-top:-50px;
+  height: 180px;
+}
+.navbar-nav>li>a#logreg{
+  border-radius:20px;
+  border: 2px outset cyan;
+}
+.navbar-nav>li{
+  padding:6px;
+}
+.navbar-nav>li>a {
+    /*margin-top: 25px;*/
+    color:white !important;
+}
+.navbar-nav>li>a:hover{
+    border-bottom:1px solid cyan;
+}
+.navbar-nav>li>.dropdown>button {
+    margin-top: 25px !important;
+    text-decoration: none;
+}
+.dropdown .dropbtn { 
+  border: none;
+  outline: none;
+  color: white;
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0px;
+}
+#ss > ul.nav.navbar-nav.navbar-left > li > div > button{
+  margin:0px !important;
+}
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  float: none;
+  color: black;
+  padding: 5px 10px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.dropdown-content a:hover {
+  background-color: #ddd;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+nav{
+	border:none !important;
+	border-radius: 0px !important;
+	margin:0px !important;
+	background-color:#3846c8 !important;
+}
+
+.footer-below{
+color:white;
+background:black;
+padding:15px;
+}
+.footer-below h4{
+  font-size: 23px !important;
+}
+.footer-below p{
+  color:grey;
+}
+.footer-below p>a{
+  color:grey;
+  text-decoration: none;
+}
+.footer-below p> a:hover{
+  color:cyan !important;
+  text-decoration: none;
+}
+.upper{
+  border-bottom:1px solid cyan;
+  margin-bottom: 25px;
+  margin-top:25px;
+}
+.fa-2x {
+    margin: 0 auto;
+    float: none;
+    display: table;
+    color: white;
+}
+section{
+  background-color: #3846c8;
+  padding-bottom: 40px;
+}
+.container-fluid{
+  padding:0px;
+}
+.row>.join{
+  margin:auto;
+}
+.join{
+  color:white;
+}
+.join h3{
+  margin:auto;
+  margin-top: 23px;
+  padding:8px;
+  font-weight: 100;
+}
+.join #one{
+  width:80%;
+  margin-top:50px;
+}
+.hi{
+  font-size: 45px;
+}
+.button {
+  border-radius: 10px;
+  background-color: #7f53ac;
+  background-image: linear-gradient(315deg, #7f53ac 0%, #647dee 74%);
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 18px;
+  border:2px solid black;
+  padding: 12px;
+  width: 280px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+}
+.button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+.button span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+.button:hover span {
+  padding-right: 25px;
+}
+.button:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+form{
+  background: #fff;
+  border-radius: 24px;
+  margin:50px 80px;
+  color:#000;
+  padding:23px;
+}
+form button{
+  width:100%;
+  background-color: #68c721 !important;
+  color:#fff;
+}
+.certification{
+  color:#fff;
+  padding:34px;
+  border-bottom: 2px solid #fff;
+}
+.certification img{
+  width:145px;
+  height:55px;
+  margin:34px;
+}
+.future{
+  margin-top:50px;
+  color:#fff;
+}
+.future img{
+  border-radius:15px;
+  width:80%;
+}
+.future .row{
+  margin-top:34px;
+}
+.future h3{
+  font-weight: 100;
+}
+.curriculum{
+  padding:28px;
+}
+.arduino{
+  background-image: url('asset/arduino.jpeg');
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  padding:50px;
+  color:white;
+}
+.arduino h1{
+  padding-left:16px;
+  padding-right:16px;
+  padding-bottom:16px;
+  padding-top: none;
+  text-shadow: 1px 1px 1px black;
+}
+.arduino p{
+  padding-left:12px;
+  padding-right:12px;
+  font-size: 18px;
+}
+.arduino .button{
+  background-color: #22b3a4 !important;
+  background-image: none !important;
+  color:black !important;
+  border-radius: 23px;
+}
+.arduino .button:hover{
+  color:white !important;
+  border-color: black !important;
+  background-color: transparent !important;
+}
+.w3-bar{
+  overflow: hidden;
+  border: 1px solid #ccc;
+  background-color: #f1f1f1;
+}
+.w3-bar button{
+  background-color: inherit;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  transition: 0.3s;
+  font-size: 17px;
+}
+.w3-bar button:hover{
+  background-color: #ddd;
+}
+.card{
+  padding:15px;
+  border:1px solid grey;
+  margin:auto;
+  margin-top:20px;
+  margin-bottom:20px;
+  border-radius: 23px;
+  height:95vh;
+  box-shadow:-1px 16px 40px 0px rgba(0,0,0,0.19);
+}
+.table>tbody>tr>td, .table>tbody>tr>th, .table>tfoot>tr>td, .table>tfoot>tr>th, .table>thead>tr>td, .table>thead>tr>th {
+    border-top: none !important;
+    padding:2px !important;
+}
+
+.card .btn{
+  width:100% !important;
+  background-color: #68c721 !important;
+  color:#fff;
+}
+.badge-info{
+  padding:8px;
+  background-color:#17a2b8;
+}
+.badge-success{
+  padding:8px;
+  color:#5ac266;
+  background-color: rgba(152,255,104,.2);
+}
+.badge-standard{
+  background-color:#ffc107;
+  padding:8px;
+}
+.badge-premium{
+  padding:8px;
+  background-color: #cb6aff;
+}
+.price{
+  font-size: 23px;
+  padding-right: 8px;
+}
+.session{
+  float:right;
+  background-color: pink;
+  color:crimson;
+  padding:6px;
+  border-radius: 10px;
+}
+
+.striked{
+  font-size: 14px;
+}
+.fa-check{
+  color:#5ac266;
+}
+.discount{
+  float:right;
+}
+.card{
+  position:relative;
+}
+.card-footer{
+  position: absolute;
+  bottom:20px;
+  min-width: 90%;
+}
+@media only screen and (max-width: 960px)
+{
+  .navbar-nav>li>a {
+    margin-top: 0px;
+  }
+    .navbar-nav>li>a:hover{
+    color:cyan !important;
+    border-bottom:none;
+  }
+  .navbar-nav>li{
+      padding:none !important;
+  }
+  .hi{
+    font-size: 30px;
+  }
+  .future h3{
+  font-size: 16px;
+  }
+  form{
+    margin:20px 20px;
+  }
+  .navbar-nav>li>a#logreg{
+  border-radius:none !important;
+  border: none !important;
+  }
+  .footer-below h4{
+  font-size: 15px !important;
+  }
+}

@@ -1,0 +1,288 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
+        integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous" />
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" />
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="bootstrap.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
+        integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous" />
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+    <title>Thinker Lab - Let's think and build</title>
+
+    <!-- ============================== Favicon ============================== -->
+    <link rel="icon" href="{% static 'asset/favicon.png' %}" sizes="192x192" />
+
+    <!-- ============================== Stylesheets ============================== -->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+    {% block mycss %} {% endblock %}
+</head>
+
+<!-- ============================== Navbar Starts ============================== -->
+<nav class="navbar navbar-default">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#ss"
+                aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <img src="{% static 'asset/logo.png' %}" href="#page-top" class="navbar-brand" alt="Thinker Lab" />
+        </div>
+        <div class="collapse navbar-collapse" id="ss">
+            <ul class="nav navbar-nav navbar-left">
+                <li>
+                    <a href="index.html"><b>HOME</b></a>
+                </li>
+                <li>
+                    <a href="coding.html"><b>CODING</b></a>
+                </li>
+                <li>
+                    <div class="dropdown">
+                        <button class="dropbtn">
+                            <b>COURSES</b>
+                            <i class="fa fa-chevron-down" aria-hidden="true"></i>
+                        </button>
+                        <div class="dropdown-content">
+                            <a href="#">NCERT</a><br />
+                            <a href="#">IIT JEE</a><br />
+                            <a href="#">WBJEE</a><br />
+                            <a href="#">BCECE</a>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="dropdown">
+                        <button class="dropbtn">
+                            <b>EXAM</b>
+                            <i class="fa fa-chevron-down" aria-hidden="true"></i>
+                        </button>
+                        <div class="dropdown-content">
+                            <a href="#">BCECE</a><br />
+                            <a href="#">WBJEE</a><br />
+                            <a href="#">JEE MAINS</a><br />
+                            <a href="#">JEE ADVANCE</a><br />
+                            <a href="#">X BOARD</a><br />
+                            <a href="#">XII BOARD</a>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="dropdown">
+                        <button class="dropbtn">
+                            <b>STUDY MATERIAL</b>
+                            <i class="fa fa-chevron-down" aria-hidden="true"></i>
+                        </button>
+                        <div class="dropdown-content">
+                            <a href="#">RD Sharma</a><br />
+                            <a href="#">RS Agarwal</a><br />
+                            <a href="#">S Chan</a><br />
+                            <a href="#">NCERT (English)</a><br />
+                            <a href="#">NCERT (Hindi)</a><br />
+                            <a href="#">Cengage (G.Tewani)</a>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a href="login.html" id="logreg"><b>LOGIN/REGISTER</b></a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<!-- ============================== Navbar Ends ============================== -->
+
+{% block content %}{% endblock %}
+
+<!-- ============================== Footer Starts ============================== -->
+<footer>
+    <div class="footer-below">
+        <div class="container">
+            <div class="row upper">
+                <div class="footer-col col-md-3">
+                    <h4>CONTACT</h4>
+                    <p>
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>5th Floor Devi Market, 83, Shyama Prasad Mukherjee Rd, Kolkata,
+                            West Bengal 700026, India</span><br /><br />
+                        <a href="#"><i class="fas fa-envelope"></i> rishavju21@gmail.com</a><br /><br />
+                        <a href="#"><i class="fas fa-mobile-alt"></i> 9113313639</a>
+                    </p>
+                </div>
+                <div class="footer-col col-md-3">
+                    <h4>COMPANY</h4>
+                    <p>
+                        <a href="#">About Us</a><br /><a href="#">Gallery</a><br /><a href="#">Blog & News</a><br /><a
+                            href="#">FAQ's</a><br />
+                        <a href="#">Franchise</a><br />
+                    </p>
+                </div>
+                <div class="footer-col col-md-3">
+                    <h4>LEGAL AND PRIVACY</h4>
+                    <p>
+                        <a href="#">Terms and Conditions</a><br />
+                        <a href="#">Privacy Policy</a><br />
+                        <a href="#">Disclaimer</a><br />
+                        <a href="#">Return Policy</a><br />
+                    </p>
+                </div>
+                <div class="footer-col col-md-3">
+                    <h4>DETAIL</h4>
+                    <p>
+                        <a href="#">Team Members</a><br />
+                        <a href="#">Teach With Us</a><br />
+                        <a href="#">Campus Ambassador</a>
+                    </p>
+                    <ul class="list-inline">
+                        <li>
+                            <a href="#" class="btn-social btn-outline" style="text-decoration: none"><i
+                                    style="color: #83f2f7" class="fab fa-twitter-square fa-2x"></i></a>
+                        </li>
+                        <li>
+                            <a href="#" class="btn-social btn-outline" style="text-decoration: none"><i
+                                    style="color: #4267b2" class="fab fa-facebook-square fa-2x"></i></a>
+                        </li>
+                        <li>
+                            <a href="#" class="btn-social btn-outline" style="text-decoration: none"><i
+                                    style="color: pink" class="fab fa-instagram fa-2x"></i></a>
+                        </li>
+                        <li>
+                            <a href="#" class="btn-social btn-outline" style="text-decoration: none"><i
+                                    style="color: #2170b5" class="fab fa-linkedin fa-2x"></i></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                    &copy; 2020 Penseur Lab Educational Private Limited
+                    <a href="#">Thinkerlab.</a>
+                </div>
+                <div class="col-md-3">
+                    <ul class="list-inline">
+                        <li><a href="#" style="color: white">Privacy</a></li>
+                        <li><a href="#" style="color: white">Terms</a></li>
+                        <li><a href="#" style="color: white">Sitemap</a></li>
+                        <li><a href="#" style="color: white">Purchase</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+<!-- ============================== Footer Ends ============================== -->
+
+<script>
+    (function ($) {
+        $.fn.countTo = function (options) {
+            options = options || {};
+            return $(this).each(function () {
+                // set options for current element
+                var settings = $.extend({},
+                    $.fn.countTo.defaults, {
+                    from: $(this).data("from"),
+                    to: $(this).data("to"),
+                    speed: $(this).data("speed"),
+                    refreshInterval: $(this).data("refresh-interval"),
+                    decimals: $(this).data("decimals"),
+                },
+                    options
+                );
+                // how many times to update the value, and how much to increment the value on each update
+                var loops = Math.ceil(settings.speed / settings.refreshInterval),
+                    increment = (settings.to - settings.from) / loops;
+                // references & variables that will change with each update
+                var self = this,
+                    $self = $(this),
+                    loopCount = 0,
+                    value = settings.from,
+                    data = $self.data("countTo") || {};
+                $self.data("countTo", data);
+                // if an existing interval can be found, clear it first
+                if (data.interval) {
+                    clearInterval(data.interval);
+                }
+                data.interval = setInterval(updateTimer, settings.refreshInterval);
+                // initialize the element with the starting value
+                render(value);
+
+                function updateTimer() {
+                    value += increment;
+                    loopCount++;
+                    render(value);
+                    if (typeof settings.onUpdate == "function") {
+                        settings.onUpdate.call(self, value);
+                    }
+                    if (loopCount >= loops) {
+                        // remove the interval
+                        $self.removeData("countTo");
+                        clearInterval(data.interval);
+                        value = settings.to;
+                        if (typeof settings.onComplete == "function") {
+                            settings.onComplete.call(self, value);
+                        }
+                    }
+                }
+
+                function render(value) {
+                    var formattedValue = settings.formatter.call(self, value, settings);
+                    $self.html(formattedValue);
+                }
+            });
+        };
+        $.fn.countTo.defaults = {
+            from: 0, // the number the element should start at
+            to: 0, // the number the element should end at
+            speed: 1000, // how long it should take to count between the target numbers
+            refreshInterval: 100, // how often the element should be updated
+            decimals: 0, // the number of decimal places to show
+            formatter: formatter, // handler for formatting the value before rendering
+            onUpdate: null, // callback method for every time the element is updated
+            onComplete: null, // callback method for when the element finishes updating
+        };
+
+        function formatter(value, settings) {
+            return value.toFixed(settings.decimals);
+        }
+    })(jQuery);
+
+    jQuery(function ($) {
+        // custom formatting example
+        $(".count-number").data("countToOptions", {
+            formatter: function (value, options) {
+                return value
+                    .toFixed(options.decimals)
+                    .replace(/\B(?=(?:\d{3})+(?!\d))/g, ",");
+            },
+        });
+        // start all the timers
+        $(".timer").each(count);
+
+        function count(options) {
+            var $this = $(this);
+            options = $.extend({},
+                options || {},
+                $this.data("countToOptions") || {}
+            );
+            $this.countTo(options);
+        }
+    });
+</script>
+
+</html>

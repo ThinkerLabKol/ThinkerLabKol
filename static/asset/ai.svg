@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="120px" height="120px" viewBox="0 0 120 120" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>AI</title>
+    <defs>
+        <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="linearGradient-1">
+            <stop stop-color="#5F69B5" offset="0%"></stop>
+            <stop stop-color="#2B2B59" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="50%" y1="0%" x2="50%" y2="198.950195%" id="linearGradient-2">
+            <stop stop-color="#FFFFFF" offset="0%"></stop>
+            <stop stop-color="#7EEAF9" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="50%" y1="0%" x2="50%" y2="198.950195%" id="linearGradient-3">
+            <stop stop-color="#FFFFFF" offset="0%"></stop>
+            <stop stop-color="#7EEAF9" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="assets" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Group-22">
+            <g id="Group-36-Copy-4">
+                <g id="Group-28" transform="translate(20.000000, 20.885010)">
+                    <polyline id="Path-6" stroke="#FF9227" stroke-width="3.75" stroke-linecap="round" points="28.0352783 1.04309082 40 12.8649902 50.7275391 0"></polyline>
+                    <rect id="Rectangle" fill="#FFFFFF" x="0" y="9.11499023" width="80" height="55" rx="6.25"></rect>
+                    <rect id="Rectangle" fill="url(#linearGradient-1)" x="3.75" y="12.8649902" width="72.5" height="47.5" rx="5"></rect>
+                    <path d="M73.939209,64.1149902 L60.9834542,69.4012554 C57.6850947,70.7470668 54.1566724,71.439209 50.5943159,71.439209 L26.2298637,71.439209 C22.4319379,71.439209 18.6751824,70.6525208 15.1963495,69.128722 L3.75,64.1149902 L3.75,64.1149902 L73.939209,64.1149902 Z" id="Path-5" fill="#D8D8D8"></path>
+                    <ellipse id="Oval" fill="url(#linearGradient-2)" cx="22.5" cy="31.6149902" rx="3.75" ry="7.5"></ellipse>
+                    <ellipse id="Oval-Copy" fill="url(#linearGradient-2)" cx="55" cy="31.6149902" rx="3.75" ry="7.5"></ellipse>
+                    <path d="M43.9459229,40.7427979 L34.4824219,40.7427979 C34.7054036,44.5623779 36.3383993,46.472168 39.3814087,46.472168 C42.4244181,46.472168 43.9459229,44.5623779 43.9459229,40.7427979 Z" id="Path-9" fill="url(#linearGradient-3)"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

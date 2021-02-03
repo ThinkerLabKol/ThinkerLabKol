@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="119px" height="119px" viewBox="0 0 119 119" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>websites</title>
+    <defs>
+        <linearGradient x1="50%" y1="0%" x2="50%" y2="98.6169764%" id="linearGradient-1">
+            <stop stop-color="#707CDA" offset="0%"></stop>
+            <stop stop-color="#4041A1" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="50%" y1="0%" x2="50%" y2="95.4104616%" id="linearGradient-2">
+            <stop stop-color="#7DFDDC" offset="0%"></stop>
+            <stop stop-color="#0D0E57" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="100%" y1="50%" x2="0%" y2="50%" id="linearGradient-3">
+            <stop stop-color="#FFFFFF" stop-opacity="0.3379316" offset="0%"></stop>
+            <stop stop-color="#FFFFFF" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="100%" y1="50%" x2="0%" y2="50%" id="linearGradient-4">
+            <stop stop-color="#FFFFFF" stop-opacity="0.3379316" offset="0%"></stop>
+            <stop stop-color="#FFFFFF" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="assets" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Group-17">
+            <g id="Group-36-Copy-2">
+                <g id="Group-26" transform="translate(17.333333, 29.714286)">
+                    <rect id="Rectangle" fill="#000000" fill-rule="nonzero" x="0" y="0" width="84.1904762" height="60.6666667" rx="7.42857143"></rect>
+                    <rect id="Rectangle" fill="url(#linearGradient-1)" x="2.47619048" y="2.47619048" width="79.2380952" height="55.7142857" rx="7.42857143"></rect>
+                    <path d="M72.4285714,12.3809524 C75.8274039,12.3809524 79.0056308,13.3254769 81.7150906,14.9663644 L81.7150906,45.7003023 C79.0056308,47.3411897 75.8274039,48.2857143 72.4285714,48.2857143 C62.5137452,48.2857143 54.4761905,40.2481596 54.4761905,30.3333333 C54.4761905,20.4185071 62.5137452,12.3809524 72.4285714,12.3809524 Z" id="Combined-Shape" fill="url(#linearGradient-2)" opacity="0.400000006"></path>
+                    <rect id="Rectangle" fill="#75D789" x="11.1428571" y="39.6190476" width="21.047619" height="6.19047619" rx="2.47619048"></rect>
+                    <rect id="Rectangle" fill="url(#linearGradient-3)" opacity="0.600000024" x="11.1428571" y="17.3333333" width="33.4285714" height="4.95238095" rx="2.47619048"></rect>
+                    <rect id="Rectangle-Copy-2" fill="url(#linearGradient-4)" opacity="0.600000024" x="11.1428571" y="27.2380952" width="13.6190476" height="4.95238095" rx="2.47619048"></rect>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
