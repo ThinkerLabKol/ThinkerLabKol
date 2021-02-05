@@ -45,3 +45,9 @@ def user_login(request):
     context = {}
 
     return render(request, 'register_user.html', context)
+
+
+def home(request):
+    context = {}
+
+    return render(request, 'index.html', context)
