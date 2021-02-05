@@ -12,6 +12,8 @@ class UserRegistrationForm(UserCreationForm):
         model = User
         fields = ['username', 'email', 'password1', 'password2', 'check_box']
 
+        
+    # Checking if user is using duplicate/already registerd Gmail ID.
     def clean_email(self):
         email = self.cleaned_data.get('email')
         username = self.cleaned_data.get('username')
