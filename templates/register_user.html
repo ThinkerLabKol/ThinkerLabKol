@@ -1,6 +1,7 @@
 {% extends 'base.html' %} 
 {% load static %} 
 {% load bootstrap4 %}
+{% load socialaccount %}
 {% block mycss %}
     <link rel="stylesheet" href="{% static 'css/loginstyle.css' %}" /> 
 {% endblock %} 
@@ -44,10 +45,7 @@
                 <div id="box_right" class="col">
                     <h1>Login</h1>
                     <div class="social"> Login using social network: <br>
-                        <a href="#" class="fb btn">
-                            <i class="fab fa-facebook-f"></i> Login with Facebook
-                        </a>
-                        <a href="#" class="google btn">
+                        <a href="{% provider_login_url 'google' %}" class="google btn">
                             <i class="fab fa-google"></i> Login with Google
                         </a>
                     </div>

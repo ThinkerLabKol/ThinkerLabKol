@@ -44,7 +44,7 @@
         <div class="collapse navbar-collapse" id="ss">
             <ul class="nav navbar-nav navbar-left">
                 <li>
-                    <a href="index.html"><b>HOME</b></a>
+                    <a href="{% url 'Home' %}"><b>HOME</b></a>
                 </li>
                 <li>
                     <a href="coding.html"><b>CODING</b></a>
@@ -97,9 +97,15 @@
                 </li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
-                <li>
-                    <a href="login.html" id="logreg"><b>LOGIN/REGISTER</b></a>
-                </li>
+                {% if user.is_authenticated %}
+                    <li>
+                        <a href="{% url 'register-user' %}" id="logreg"><b>LOGOUT</b></a>
+                    </li>
+                {% else %}
+                    <li>
+                        <a href="{% url 'register-user' %}" id="logreg"><b>LOGIN/REGISTER</b></a>
+                    </li>
+                {% endif %}
             </ul>
         </div>
     </div>
