@@ -6,6 +6,12 @@ from django.contrib import messages
 
 from django.http import HttpResponse
 
+
+def home(request):
+    context = {}
+
+    return render(request, 'index.html', context)
+
 # ------------------------ User Registration ------------------------
 def register_user(request):
     registration_form = UserRegistrationForm()
@@ -47,7 +53,9 @@ def user_login(request):
     return render(request, 'register_user.html', context)
 
 
-def home(request):
-    context = {}
+# ------------------------ User Logout ------------------------
+def user_logout(request):
+    logout(request)
+    return redirect('Home')
 
-    return render(request, 'index.html', context)
+

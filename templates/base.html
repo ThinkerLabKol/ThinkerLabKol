@@ -99,7 +99,7 @@
             <ul class="nav navbar-nav navbar-right">
                 {% if user.is_authenticated %}
                     <li>
-                        <a href="{% url 'register-user' %}" id="logreg"><b>LOGOUT</b></a>
+                        <a href="{% url 'user-logout' %}" id="logreg"><b>LOGOUT</b></a>
                     </li>
                 {% else %}
                     <li>
