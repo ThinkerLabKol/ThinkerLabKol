@@ -1,10 +1,13 @@
 from django.shortcuts import render, redirect
+
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, login, logout
-from .forms import UserRegistrationForm
 from django.contrib import messages
 
-from django.http import HttpResponse
+from .forms import UserRegistrationForm
+
+from django.core.mail import send_mail
+from Thinker_Lab.settings import EMAIL_HOST_USER
 
 
 def home(request):
@@ -21,6 +24,13 @@ def register_user(request):
 
         if registration_form.is_valid():
             registration_form.save()
+
+            # Sending mail to user after successful registration
+            subject = 'Welcome to Thinker Lab'
+            message = 'Contratulations! You have successfully registerd into Thinker Lab. We wish you all the best for your future.'
+            reciepient = str(registration_form['email'].value())
+            send_mail(subject, message, EMAIL_HOST_USER, [reciepient])
+
             user = registration_form.cleaned_data.get('username')
             messages.success(request, f'Congratulations! Account has been successfuly created for ' + '"' + user + '"')
             return redirect('login-user')
