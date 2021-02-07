@@ -1,86 +1,64 @@
-{% extends 'base.html' %} 
-{% load static %} 
+{% extends 'base.html' %}
+{% load static %}
 {% load bootstrap4 %}
 {% load socialaccount %}
+
 {% block mycss %}
-    <link rel="stylesheet" href="{% static 'css/loginstyle.css' %}" /> 
-{% endblock %} 
+    <link rel="stylesheet" href="{% static 'css/register.css' %}" />
+{% endblock %}
+
 {% block content %}
 
 
-<div class="loginreg">
-    <div class="container">
+<div class="reg">
+    <div class="row">
+        <div class="container">
 
-        {% if messages %}
-            {% for message in messages %}
+            {% if messages %}
+                {% for message in messages %}
                 <div class="alert alert-{{ message.tags }}">
                     {{ message }}
                 </div>
-            {% endfor %}
-        {% endif %}
-        
-        <div id="box">
-            <div id="content" class="row">
+                {% endfor %}
+            {% endif %}
 
-                <!-- ------------------------- Registration Form Starts ------------------- -->
-                <div id="box_left" class="col">
-                    <h1>Register</h1>
-                    <div id="login"> Insert your account informations: <br>
-                        <form name="register" action="#" method="POST" accept-charset="utf-8">
-                            {% csrf_token %}
-                            {% for field in registration_form %}
-                                {% bootstrap_field field %}
-                            {% endfor %}
+            <div class="col-lg-6">
+                <div id="box">
 
-                            {% buttons %}
-                                <button class="btn btn-success">Register</button>
-                            {% endbuttons %}
-                        </form>
+                    <!-- Register Form Starts-->
+                    <div id="content">
+                        <h1>Register</h1>
+                        <div id="login">
+                            <form name="register" action="#" method="POST" accept-charset="utf-8">
+                                {% csrf_token %}
+                                {% for field in registration_form %}
+                                    {% bootstrap_field field %}
+                                {% endfor %}
+
+                                {% buttons %}
+                                    <button class="btn btn-success">Register</button>
+                                {% endbuttons %}
+
+                                <div class="border-top pt-3">
+                                    Already Have an Account? <a class="ml-2" href="{% url 'login-user' %}">Sign
+                                        In</a>
+                                </div>
+
+                                Or, <b>Register using <a href="{% provider_login_url 'google' %}">Google
+                                        account.</b></a>
+                            </form>
+                        </div>
                     </div>
+                    <!-- Register Form Ends -->
+
                 </div>
-                <!-- ------------------------- Registration Form Ends ------------------- -->
-
-
-                <!-- ------------------------- Login Form Starts ------------------- -->
-                <div id="box_right" class="col">
-                    <h1>Login</h1>
-                    <div class="social"> Login using social network: <br>
-                        <a href="{% provider_login_url 'google' %}" class="google btn">
-                            <i class="fab fa-google"></i> Login with Google
-                        </a>
-                    </div>
-                    <div id="login1"> Or insert your account informations: <br>
-                        <form name="login" action="#" method="POST" accept-charset="utf-8">
-                            {% csrf_token %}
-                            <div class="form-group">
-                                <input type="text" name="username" placeholder="Username" id="l_user" class="login user"
-                                    title="Username" required>
-                            </div>
-                            <div class="form-group">
-                                <input type="password" name="password" placeholder="Password" id="l_password"
-                                    class="login password" title="Password" required>
-                            </div>
-                            <input type="submit" value="Login" class="btn_login">
-                        </form>
-                    </div>
-                    <div id="bottom_text"> Don't have an account?
-                        <a href="javascript:document.getElementById('user').focus()"
-                            title="Create new account">Register</a>. <br>Forgot your <a href="#"
-                            title="Recovery Password">Password</a> or <a href="#"
-                            title="Recovery Username">Username</a>?
-                    </div>
-                </div>
-                <!-- ------------------------- Login Form Ends ------------------- -->
-
+            </div>
+            <div class="col-lg-6">
+                <img src="{% static 'asset/register.png' %}" alt="" class="reg-img" />
             </div>
         </div>
     </div>
 </div>
-
-
-
-
-
 
 
 {% endblock %}

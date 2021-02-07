@@ -102,9 +102,8 @@
                         <a href="{% url 'user-logout' %}" id="logreg"><b>LOGOUT</b></a>
                     </li>
                 {% else %}
-                    <li>
-                        <a href="{% url 'register-user' %}" id="logreg"><b>LOGIN/REGISTER</b></a>
-                    </li>
+                    <li><a href="{% url 'login-user' %}"><b>LOGIN</b></a></li>
+					<li><a href="{% url 'register-user' %}" id="reg"><b>REGISTER</b></a></li>
                 {% endif %}
             </ul>
         </div>

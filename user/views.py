@@ -9,13 +9,17 @@ from .forms import UserRegistrationForm
 from django.core.mail import send_mail
 from Thinker_Lab.settings import EMAIL_HOST_USER
 
+from .decorators import unauthorized_user
+
 
 def home(request):
     context = {}
 
     return render(request, 'index.html', context)
 
+
 # ------------------------ User Registration ------------------------
+@unauthorized_user
 def register_user(request):
     registration_form = UserRegistrationForm()
 
@@ -45,6 +49,7 @@ def register_user(request):
 
 
 # ------------------------ User Login ------------------------
+@unauthorized_user
 def user_login(request):
     if request.method == 'POST':
         username = request.POST.get('username')
@@ -60,7 +65,7 @@ def user_login(request):
 
     context = {}
 
-    return render(request, 'register_user.html', context)
+    return render(request, 'login_user.html', context)
 
 
 # ------------------------ User Logout ------------------------

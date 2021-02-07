@@ -87,16 +87,18 @@ nav{
     display: table;
     color: white;
 }
-
-/*login & reg box */
-.log{
+.reg-img{
+  width:100%;
+}
+/*reg box */
+.reg{
   background-color: #3846c8;
 }
 #box{
   border:1.5px solid black;
   background-color: whitesmoke;
-  border-radius: 10px;
   margin:auto;
+  border-radius: 10px;
   margin-top: 24px;
   margin-bottom: 24px;
   box-shadow:-1px 16px 40px 0px rgba(0,0,0,0.19);
@@ -127,10 +129,6 @@ input:hover,
 .btn:hover {
   opacity: 1;
 }
-.google {
-  background-color: #dd4b39;
-  color: white;
-}
 input[type=submit] {
   background-color: #4CAF50;
   color: white;
@@ -138,9 +136,6 @@ input[type=submit] {
 }
 input[type=submit]:hover {
   background-color: #45a049;
-}
-.login-img{
-  width:100%;
 }
 .col {
   float: left;
