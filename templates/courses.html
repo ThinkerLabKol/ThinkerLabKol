@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% load embed_video_tags %}
+{% load static %}
+{% block content %}
+
+    <div class="container">
+        <!-- Search Bar -->
+        <br>
+            <form class="form-inline" method="GET">
+              <input class="form-control mr-sm-2" name="q" type="search" placeholder="Search" aria-label="Search">
+              <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+            </form>
+        <br>
+
+        {% for course in courses %}
+            <a href="{% url 'course-details' course.id %}"><img src="{{ course.thumbnail.url }}" alt=""></a> 
+            <a href="{% url 'course-details' course.id %}">{{ course.course_name }}</a>
+        {% endfor %}
+    </div>
+
+{% endblock %}

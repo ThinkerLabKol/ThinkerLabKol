@@ -35,9 +35,12 @@ ALLOWED_HOSTS = []
 INSTALLED_APPS = [
     # Apps
     'user.apps.UserConfig',
+    'courses.apps.CoursesConfig',
 
     # Modules
     'bootstrap4',
+    'embed_video',
+    'ckeditor',
 
     # django-allauth 
     'django.contrib.sites',
