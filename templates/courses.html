@@ -22,12 +22,13 @@
             <div id="onee" class="w3-container city">
                 <div class="row">
 
-                    {% for course in courses %}
+                    {% for course in page_obj %}
                     <div class="col-md-4">
                         <div class="card">
                             <img class="card-img-top" src="{{ course.thumbnail.url }}" alt="Card image cap" />
                             <div class="middle">
-                                <a class="text" href="{% url 'course-details' course.id %}" target="_blank">Read more!</a>
+                                <a class="text" href="{% url 'course-details' course.id %}" target="_blank">Read
+                                    more!</a>
                             </div>
                             <div class="card-body">
                                 <h4 class="card-title">{{ course.course_name }}</h4>
@@ -43,69 +44,59 @@
                 </div>
             </div>
 
+            <!-- ============================ Pagination Starts ============================-->
             <div class="w3-bar w3-black text-center">
-                <button class="w3-bar-item w3-button" onclick="openCity(event,'onee')">1</button>
-                <button class="w3-bar-item w3-button" onclick="openCity(event,'two')">2</button>
+                <div class="pagination">
+                    <span class="step-links">
+                        {% if page_obj.has_previous %}
+                        <a href="?page=1"><button class="w3-bar-item w3-button">First</button></a>
+                        <a href="?page={{ page_obj.previous_page_number }}"><button class="w3-bar-item w3-button">Previous</button></a>
+                        {% endif %}
+
+                        <a href="?page={{ page_obj.number }}"><button class="w3-bar-item w3-button">{{ page_obj.number }}</button></a>
+                        {% if page_obj.has_next %}
+                        <a href="?page={{ page_obj.next_page_number }}"><button class="w3-bar-item w3-button">Next</button></a>
+                        <a href="?page={{ page_obj.paginator.num_pages }}"><button class="w3-bar-item w3-button">Last</button></a>
+                        {% endif %}
+                    </span>
+                </div>
             </div>
+            <!-- ============================ Pagination Ends ============================-->
+
         </div>
 
+        <!-- ============================ Right Menu Starts ============================-->
         <div class="col-lg-3" id="filter">
             <form action="">
+
                 <h4>Course Categories</h4>
+                {% for category in course_categoies %}
                 <div class="form-group">
                     <input type="checkbox" id="backend" name="backend">
-                    <label for="backend"> Backend (3)</label>
+                    <label for="backend"> {{ category.category_name }} </label>
                 </div>
-                <div class="form-group">
-                    <input type="checkbox" id="css" name="css">
-                    <label for="css"> CSS (2)</label>
-                </div>
-                <div class="form-group">
-                    <input type="checkbox" id="frontend" name="frontend">
-                    <label for="frontend"> Frontend (2)</label>
-                </div>
-                <div class="form-group">
-                    <input type="checkbox" id="photo" name="photo">
-                    <label for="photo"> Photography (2)</label>
-                </div>
-                <div class="form-group">
-                    <input type="checkbox" id="gen" name="gen">
-                    <label for="gen"> General (2)</label>
-                </div>
-                <div class="form-group">
-                    <input type="checkbox" id="it" name="it">
-                    <label for="it"> IT & Software (2)</label>
-                </div>
-                <div class="form-group">
-                    <input type="checkbox" id="pl" name="pl">
-                    <label for="pl"> Programming Language (3)</label>
-                </div>
-                <div class="form-group">
-                    <input type="checkbox" id="tech" name="tech">
-                    <label for="tech"> Technology (2)</label>
-                </div>
+                {% endfor %}
+
                 <h4>Instructors</h4>
                 <div class="form-group">
                     <input type="checkbox" id="instructor" name="instructor">
                     <label for="instructor"> mic@labthinker (18)</label>
                 </div>
-                <h4>Price</h4>
+
+                <h4>Price</h4>                
                 <div class="form-group">
                     <label><input type="radio" name="gg"> All (18)</label>
                 </div>
+                {% for membership in memberships %}
                 <div class="form-group">
-                    <label><input type="radio" name="gg"> Free (1)</label>
+                    <label><input type="radio" name="gg"> {{ membership.membership_type }}</label>
                 </div>
-                <div class="form-group">
-                    <label><input type="radio" name="gg"> Paid (17)</label>
-                </div>
-                <div class="form-group">
-                    <button type="submit" class="btn">FILTER RESULTS</button>
-                </div>
+                {% endfor %}
+                
             </form>
         </div>
+        <!-- ============================ Right Menu Ends ============================-->
     </div>
 </div>
 
 {% endblock %}
-
