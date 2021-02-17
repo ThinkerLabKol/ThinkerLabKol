@@ -1,0 +1,285 @@
+@import url('https://fonts.googleapis.com/css?family=Josefin+Sans:300,400,500,600,700,800&display=swap');
+*{
+	font-family: 'Josefin Sans';
+}
+html{
+	scroll-behavior: smooth;
+}
+body{
+	overflow-y: scroll;
+	overflow-x: hidden;
+	max-width: 100%;
+}
+ul{
+  list-style-type: none;
+  padding: 0px !important;
+}
+
+/* Navbar styling starts */
+.navbar-brand{
+	margin-top:-50px;
+	height: 180px;
+}
+.navbar-nav>li>a#reg{
+	border-left:1px solid black;
+}
+.navbar-nav>li{
+	padding:6px;
+}
+.navbar-right>li>a{
+  padding-bottom: 0px !important;
+}
+.navbar-right>li>a:hover{
+  color: cyan !important;
+  border-bottom: none !important;
+}
+.navbar-nav>li>a {
+    /*margin-top: 25px;*/
+    color:white !important;
+}
+.navbar-nav>li>a:hover{
+    border-bottom:1px solid cyan;
+}
+#ss > ul.nav.navbar-nav.navbar-left > li > div > button{
+	margin:0px !important;
+}
+.navbar-nav>li>.dropdown>button {
+    margin-top: 25px !important;
+    text-decoration: none;
+}
+.dropdown .dropbtn {
+  border: none;
+  outline: none;
+  color: white;
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0px;
+}
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+.dropdown-content a {
+  float: none;
+  color: black;
+  padding: 5px 10px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+.dropdown-content a:hover {
+  background-color: #ddd;
+}
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+nav{
+	border:none !important;
+	border-radius: 0px !important;
+	margin:0px !important;
+	background-color:#3846c8 !important;
+}
+/* Navbar styling ends */
+
+.coursebg {
+  width: 100%;
+  object-fit: cover;
+}
+.course-section {
+  position: relative;
+}
+.course-section h1{
+  position: absolute;
+  top:60px;
+  left:40px;
+  color:#fff;
+  font-weight: 900;
+  font-size:60px;
+  text-shadow: 2px 2px grey;
+}
+.main{
+  padding:40px;
+}
+.col-md-4{
+  padding:16px;
+}
+.w3-bar{
+  overflow: hidden;
+}
+.w3-bar button{
+  background-color: inherit;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  transition: 0.3s;
+  font-size: 17px;
+}
+.w3-bar button:hover{
+  background-color: #ddd;
+}
+.w3-bar button.active{
+  color: #fff;
+  background: orange;
+  transition: background-color .15s ease-in;
+}
+.active:after {
+    content: none !important;
+}
+
+/* Card styling starts */
+.card{
+  line-height: 25px;
+  border: 1px solid #e5e5e5;
+  padding: 12px;
+  text-align: center;
+  border-radius: 8px;
+}
+.card-img-top{
+  margin: 0;
+  border-radius: 8px;
+  overflow: hidden;
+  position: relative;
+  width:100%;
+  height:140px !important;
+  border-style: groove;
+  height:auto;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  opacity:1;
+  transition: .5s ease;
+  backface-visibility: hidden;
+}
+.card-title{
+  padding-top: 10px;
+  font-weight:900;
+}
+.likes{
+  float:left;
+  padding-right:12px;
+}
+.comment{
+  float:left;
+}
+.price{
+  float:right;
+}
+.card-body{
+  padding-bottom: 20px;
+}
+.card:hover .card-img-top{
+  opacity: 0.7;
+}
+.card:hover .middle {
+  opacity: 1;
+}
+.middle {
+  transition: .5s ease;
+  opacity: 0;
+  position: absolute;
+  top: 35%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  text-align: center;
+}
+a:hover{
+  text-decoration: none;
+}
+.text {
+  background-color: #4CAF50;
+  color: black;
+  font-size: 16px;
+  padding: 6px 10px;
+}
+.text:hover{
+  background-color: blue;
+  color:white;
+}
+/* Card styling ends */
+
+/* Filter column styling starts */
+form{
+  border-radius: 5px;
+  color:#000;
+  border:1px solid #e5e5e5;
+  padding:10px;
+  padding-left: 20px;
+}
+form button{
+  width:100%;
+  background-color: #68c721 !important;
+  color:#fff;
+}
+.form-group {
+  margin-bottom: 0px !important;
+}
+label{
+  font-weight: 400 !important;
+}
+form h4{
+  margin-bottom: 20px;
+}
+/* Filter column styling ends */
+
+/* Footer Styling Starts */
+.footer-below{
+  color:white;
+  background:black;
+  padding:15px;
+}
+.footer-below h4{
+  font-size: 23px !important;
+}
+.footer-below p{
+  color:grey;
+}
+.footer-below p>a{
+  color:grey;
+  text-decoration: none;
+}
+.footer-below p> a:hover{
+  color:cyan !important;
+  text-decoration: none;
+}
+.upper{
+  border-bottom:1px solid cyan;
+  margin-bottom: 25px;
+  margin-top:25px;
+}
+/* Footer Styling Ends */
+
+@media only screen and (max-width: 960px)
+{
+    .navbar-nav>li>a {
+      margin-top: 0px;
+    }
+    .navbar-right>li>a{
+      padding-bottom: 10px !important;
+    }
+    .navbar-nav>li{
+      padding:none !important;
+    }
+    .navbar-nav>li>a:hover{
+      color:cyan !important;
+      border-bottom:none;
+    }
+    .navbar-nav>li>a#reg{
+      border-left: none !important;
+    }
+    .navbar-nav>li>.dropdown>button {
+      margin-top: none !important;
+    }
+    .course-section h1{
+      left:30px;
+      top:30px;
+      font-size:30px;
+    }
+    .footer-below h4{
+      font-size: 15px !important;
+    }
+}

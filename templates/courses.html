@@ -1,21 +1,111 @@
 {% extends 'base.html' %}
 {% load embed_video_tags %}
 {% load static %}
+
+{% block mycss %}
+<link rel="stylesheet" href="{% static 'css/courses.css' %}" />
+{% endblock %}
+
 {% block content %}
 
-    <div class="container">
-        <!-- Search Bar -->
-        <br>
-            <form class="form-inline" method="GET">
-              <input class="form-control mr-sm-2" name="q" type="search" placeholder="Search" aria-label="Search">
-              <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-            </form>
-        <br>
 
-        {% for course in courses %}
-            <a href="{% url 'course-details' course.id %}"><img src="{{ course.thumbnail.url }}" alt=""></a> 
-            <a href="{% url 'course-details' course.id %}">{{ course.course_name }}</a>
-        {% endfor %}
+
+<div class="course-section">
+    <img src="{% static 'asset/coursepagebg.jpg' %}" alt="" class="coursebg" />
+    <h1>ALL COURSES</h1>
+</div>
+
+<div class="container-fluid main">
+    <div class="row">
+        <div class="col-lg-9">
+
+            <div id="onee" class="w3-container city">
+                <div class="row">
+
+                    {% for course in courses %}
+                    <div class="col-md-4">
+                        <div class="card">
+                            <img class="card-img-top" src="{{ course.thumbnail.url }}" alt="Card image cap" />
+                            <div class="middle">
+                                <a class="text" href="{% url 'course-details' course.id %}" target="_blank">Read more!</a>
+                            </div>
+                            <div class="card-body">
+                                <h4 class="card-title">{{ course.course_name }}</h4>
+                                <hr>
+                                <span class="text-muted likes"><i class="fas fa-thumbs-up"></i> 273</span>
+                                <span class="text-muted comment"><i class="fas fa-comment"></i> 2</span>
+                                <span class="price"><strike class="text-muted striked">Rs. 80.00</strike><b
+                                        style="color:red;"> Rs. {{ course.price }}</b></span>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+
+            <div class="w3-bar w3-black text-center">
+                <button class="w3-bar-item w3-button" onclick="openCity(event,'onee')">1</button>
+                <button class="w3-bar-item w3-button" onclick="openCity(event,'two')">2</button>
+            </div>
+        </div>
+
+        <div class="col-lg-3" id="filter">
+            <form action="">
+                <h4>Course Categories</h4>
+                <div class="form-group">
+                    <input type="checkbox" id="backend" name="backend">
+                    <label for="backend"> Backend (3)</label>
+                </div>
+                <div class="form-group">
+                    <input type="checkbox" id="css" name="css">
+                    <label for="css"> CSS (2)</label>
+                </div>
+                <div class="form-group">
+                    <input type="checkbox" id="frontend" name="frontend">
+                    <label for="frontend"> Frontend (2)</label>
+                </div>
+                <div class="form-group">
+                    <input type="checkbox" id="photo" name="photo">
+                    <label for="photo"> Photography (2)</label>
+                </div>
+                <div class="form-group">
+                    <input type="checkbox" id="gen" name="gen">
+                    <label for="gen"> General (2)</label>
+                </div>
+                <div class="form-group">
+                    <input type="checkbox" id="it" name="it">
+                    <label for="it"> IT & Software (2)</label>
+                </div>
+                <div class="form-group">
+                    <input type="checkbox" id="pl" name="pl">
+                    <label for="pl"> Programming Language (3)</label>
+                </div>
+                <div class="form-group">
+                    <input type="checkbox" id="tech" name="tech">
+                    <label for="tech"> Technology (2)</label>
+                </div>
+                <h4>Instructors</h4>
+                <div class="form-group">
+                    <input type="checkbox" id="instructor" name="instructor">
+                    <label for="instructor"> mic@labthinker (18)</label>
+                </div>
+                <h4>Price</h4>
+                <div class="form-group">
+                    <label><input type="radio" name="gg"> All (18)</label>
+                </div>
+                <div class="form-group">
+                    <label><input type="radio" name="gg"> Free (1)</label>
+                </div>
+                <div class="form-group">
+                    <label><input type="radio" name="gg"> Paid (17)</label>
+                </div>
+                <div class="form-group">
+                    <button type="submit" class="btn">FILTER RESULTS</button>
+                </div>
+            </form>
+        </div>
     </div>
+</div>
 
 {% endblock %}
+

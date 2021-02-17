@@ -1,8 +1,8 @@
 from django.db import models
 from django.contrib.auth.models import User
 from embed_video.fields import EmbedVideoField
-from django.utils.text import slugify
-from ckeditor.fields import RichTextField
+# from django.utils.text import slugify
+# from ckeditor.fields import models.TextField
 
 class CourseCategory(models.Model):
     category_name = models.CharField(max_length=30)
@@ -15,22 +15,22 @@ class CourseCategory(models.Model):
         return self.category_name
 
 class Course(models.Model):
-    slug = models.SlugField()
+    # slug = models.SlugField()
     thumbnail = models.ImageField(upload_to='Thumbnail')
     course_name = models.CharField(max_length=100)
     course_category = models.ManyToManyField(CourseCategory)
-    description = RichTextField()
+    description = models.TextField()
     course_type = models.ForeignKey('Membership', on_delete=models.SET_NULL, null=True)
-    certification = RichTextField()
-    learning_outcome = RichTextField()
+    certification = models.TextField()
+    learning_outcome = models.TextField()
     instructor_name = models.CharField(max_length=30)
     price = models.FloatField(default=0.0)
 
-    def super(self, *args, **kwargs):
-        if not self.slug:
-            self.slug = slugify(self.course_name)
+    # def super(self, *args, **kwargs):
+    #     if not self.slug:
+    #         self.slug = slugify(self.course_name)
         
-        return super(Course, self).save(*args, *kwargs)
+    #     return super(Course, self).save(*args, *kwargs)
 
     def __str__(self):
         return self.course_name
@@ -56,7 +56,7 @@ class Lessons(models.Model):
 
 class Reviews(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
-    comment = RichTextField()
+    comment = models.TextField()
 
     class Meta:
         verbose_name = 'Review'
