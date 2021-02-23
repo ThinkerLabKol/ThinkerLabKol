@@ -3,12 +3,24 @@
 {% block content %}
 
     <div class="container">
-       <img src="{{ course.thumbnail.url }}" alt=""> {{ course.price }} <br>
+       <img src="{{ course.thumbnail.url }}" alt=""> <h4>Course Price: </h4> {{ course.price }} <br>
+       <h2>Course Description</h2>
        {{ course.description }} <br>
+       <hr>
+
+       <h2>Course Certifications</h2>
        {{ course.certification }} <br>
+       <hr>
+
+       <h2>What You'll Learn</h2>
        {{ course.learning_outcome }} <br>
+       <hr>
+
+       <h2>Lessons</h2>
+       {% for lesson in lessons %}
+            <h4><a href="{% url 'lesson-details' lesson.id %}">{{ lesson.lesson_title }}</a><br></h4>
+       {% endfor %}
     </div>
 
 {% endblock %}
 
-Lorem, ipsum dolor sit amet consectetur adipisicing elit. Praesentium id natus totam, quaerat voluptatibus facere impedit debitis esse minus sed fuga molestias delectus quisquam commodi eveniet? Molestiae nisi maiores qui.

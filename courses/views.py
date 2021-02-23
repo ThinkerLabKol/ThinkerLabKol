@@ -10,7 +10,7 @@ def all_courses(request):
     memberships = Membership.objects.all()
 
     # Pagination
-    paginator = Paginator(courses, 6)
+    paginator = Paginator(courses, 12)
     page_number = request.GET.get('page')
     page_obj = paginator.get_page(page_number)
 
@@ -31,9 +31,20 @@ def all_courses(request):
 
 def course_details(request, id):
     course = Course.objects.get(id=id)
+    lessons = Lessons.objects.filter(course_name=course)
 
     context = {
         'course': course,
+        'lessons': lessons,
     }
 
     return render(request, 'course_details.html', context)
+
+def lesson_details(request, id):
+    lesson = Lessons.objects.get(id=id)
+
+    context = {
+        'lesson': lesson,
+    }
+
+    return render(request, 'lesson_details.html', context)

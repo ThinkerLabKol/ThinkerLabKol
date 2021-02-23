@@ -35,11 +35,16 @@ class Course(models.Model):
     def __str__(self):
         return self.course_name
 
+def pdf_directory_path(instance, filename):
+    return '{0}/{1}'.format(instance.course_name, filename)
+
 class Lessons(models.Model):
     # slug = models.SlugField()
     lesson_title = models.CharField(max_length=100)
     course_name = models.ForeignKey(Course, on_delete=models.CASCADE)
-    video = EmbedVideoField()
+    video = EmbedVideoField(null=True, blank=True)
+    pdf = models.FileField(null=True, blank=True, upload_to=pdf_directory_path)
+
 
     class Meta:
         verbose_name = 'Lesson'
@@ -52,7 +57,7 @@ class Lessons(models.Model):
     #     return super(Lessons, self).save(*args, **kwargs)
 
     def __str__(self):
-        return self.lesson_title
+        return self.lesson_title + " of " + str(self.course_name)
 
 class Reviews(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)

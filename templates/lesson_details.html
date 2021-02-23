@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load embed_video_tags %}
+{% block content %}
+
+<div class="container">
+    <h2>Course</h2>
+    {{ lesson.course_name }} <br>
+    <hr>
+
+    <h2>Author</h2>
+    {{ lesson.course_name.instructor_name }} <br>
+    <hr>
+
+    <h2>Title</h2>
+    {{ lesson.lesson_title }} <br>
+    <hr>
+    {% video lesson.video '400x200' %}
+
+    
+
+
+    {% if lesson.pdf %}
+    <h2>PDFs</h2>
+
+    <object data="{{ lesson.pdf.url }}" type="application/pdf" width="300" height="200">
+        <a href="{{ lesson.pdf.url }}">Click Here</a>
+    </object>
+    {% endif %}
+
+
+
+
+</div>
+
+
+{% endblock %}
