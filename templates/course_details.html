@@ -3,7 +3,7 @@
 {% block content %}
 
     <div class="container">
-       <img src="{{ course.thumbnail.url }}" alt=""> <h4>Course Price: </h4> {{ course.price }} <br>
+       <img src="{{ course.thumbnail.url }}" alt=""> <h4>Course Price: </h4> {{ course.price }} <a href="{% url 'course-registration' course.id%}" class="btn btn-primary">Buy Now</a> <br>
        <h2>Course Description</h2>
        {{ course.description }} <br>
        <hr>

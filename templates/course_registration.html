@@ -1,0 +1,134 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load bootstrap4 %}
+
+{% block mycss %}
+<link rel="stylesheet" href="{% static 'css/course_registration.css' %}">
+{% endblock %}
+
+{% block content %}
+
+<div class="purchase">
+    <div class="row">
+        <div class="container">
+
+            {% if messages %}
+            {% for message in messages %}
+            <div class="alert alert-{{ message.tags }}">
+                {{ message }}
+            </div>
+            {% endfor %}
+            {% endif %}
+
+            <div class="col-lg-6">
+                <div class="text-center">
+                    <h2 style="color:whitesmoke;">Thank you for showing interest in</h2>
+                    <h1 style="font-size: 45px;color:#fcb811"><b>{{ course_name }}</b></h1>
+                </div>
+                <div id="box">
+
+                    <div id="content">
+                        <!-- =============================== Registration Form Starts ======================================= -->
+                        <div id="informationuser">
+                            <form action="" method="POST">
+                                {% csrf_token %}
+
+                                <div class="form-group">
+                                    <label for="name">Name</label>
+                                    <input type="text" class="form-control" placeholder="Enter name" id="name"
+                                        name="name" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="name">Price</label>
+                                    <input readonly class="form-control" value="{{ course_price }}" id="name"
+                                        name="price" required>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="num">Mobile Number</label>
+                                    <input type="tel" class="form-control" placeholder="Enter mobile number" id="num"
+                                        name="num" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="email">Email ID</label>
+                                    <input readonly type="email" class="form-control" id="email"
+                                        value="{{ user.email }}" name="email" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="college">College</label>
+                                    <input type="text" class="form-control" id="college"
+                                        placeholder="Enter college name" name="college" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="dept">Branch/ Department</label>
+                                    <input type="text" class="form-control" id="dept" placeholder="Enter Department"
+                                        name="dept" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="class">Year Of Study</label>
+                                    <select class="form-control" name="yop" required>
+                                        <option>1st</option>
+                                        <option>2nd</option>
+                                        <option>3rd</option>
+                                        <option>4th</option>
+                                        <option>5th</option>
+                                        <option>Passout</option>
+                                    </select>
+                                </div>
+                                {% if not payment %}
+                                <div class="form-group">
+                                    <button type="submit" class="btn">SUBMIT FORM</button>
+                                </div>
+                                {% endif %}
+                            </form>
+                        </div>
+                        <!-- =============================== Registration Form Ends ======================================= -->
+
+                        <!-- =============================== Razorpay Payment Form Starts ======================================= -->
+                        {% if payment %}
+                        <form action="" method="POST">
+                            <button class="btn" id="rzp-button1">Pay</button>
+                            <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+                            <script>
+                                var options = {
+                                    "key": "{{ RAZORPAY_ID }}",
+                                    "amount": "{{ payment.amount }}",
+                                    "currency": "INR",
+                                    "name": "Thinker Lab",
+                                    "description": "Course Registration",
+                                    "image": "{% static 'asset/logo.png' %}",
+                                    "order_id": "{{ payment.id }}",
+                                    "callback_url": "{% url 'success' %}",
+                                    "prefill": {
+                                        "name": "{{ name }}",
+                                        "email": "{{ user.email }}",
+                                        "contact": "{{ mobile_no }}"
+                                    },
+                                    "notes": {
+                                        "address": "Razorpay Corporate Office"
+                                    },
+                                    "theme": {
+                                        "color": "#3399cc"
+                                    }
+                                };
+                                var rzp1 = new Razorpay(options);
+                                document.getElementById('rzp-button1').onclick = function (e) {
+                                    rzp1.open();
+                                    e.preventDefault();
+                                }
+                            </script>
+                        </form>
+                        {% endif %}
+                        <!-- =============================== Razorpay Payment Form Ends ======================================= -->
+                    </div>
+
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <img src="{% static 'asset/ty.png' %}" alt="" class="img" />
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

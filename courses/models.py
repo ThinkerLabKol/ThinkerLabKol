@@ -35,6 +35,26 @@ class Course(models.Model):
     def __str__(self):
         return self.course_name
 
+class CourseRegistration(models.Model):
+    name = models.CharField(max_length=30, null=False, blank=False)
+    price = models.FloatField(default=0.00, null=False, blank=False)
+    mobile_no = models.IntegerField(null=False, blank=False)
+    email = models.EmailField(null=False, blank=False)
+    college = models.CharField(max_length=100, null=False, blank=False)
+    department = models.CharField(max_length=50, null=False, blank=False)
+    year_of_passing = models.CharField(max_length=20, null=False, blank=False)
+    payment_id = models.CharField(max_length=50, null=False, blank=False)
+    paid = models.BooleanField(default=False, null=False, blank=False)
+    course_name = models.CharField(max_length=100, null=False, blank=False)
+    
+
+    class Meta:
+        verbose_name_plural = 'Course Registrations'
+
+    def __str__(self):
+        return self.name
+
+
 def pdf_directory_path(instance, filename):
     return '{0}/{1}'.format(instance.course_name, filename)
 
