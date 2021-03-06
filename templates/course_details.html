@@ -1,26 +1,279 @@
 {% extends 'base.html' %}
 {% load static %}
-{% block content %}
 
-    <div class="container">
-       <img src="{{ course.thumbnail.url }}" alt=""> <h4>Course Price: </h4> {{ course.price }} <a href="{% url 'course-registration' course.id%}" class="btn btn-primary">Buy Now</a> <br>
-       <h2>Course Description</h2>
-       {{ course.description }} <br>
-       <hr>
-
-       <h2>Course Certifications</h2>
-       {{ course.certification }} <br>
-       <hr>
-
-       <h2>What You'll Learn</h2>
-       {{ course.learning_outcome }} <br>
-       <hr>
-
-       <h2>Lessons</h2>
-       {% for lesson in lessons %}
-            <h4><a href="{% url 'lesson-details' lesson.id %}">{{ lesson.lesson_title }}</a><br></h4>
-       {% endfor %}
-    </div>
-
+{% block mycss %}
+<link rel="stylesheet" href="{% static 'css/course_details.css' %}">
 {% endblock %}
 
+{% block content %}
+
+<div class="container main">
+    <h1>{{ course.course_name }}</h1>
+    <div class="row">
+        <div class="col-md-3">
+            <div class="col-md-3">
+                <img src="https://secure.gravatar.com/avatar/882fd629aa397978321234f427618705?s=110&d=mm&r=g"
+                    class="image">
+            </div>
+            <div class="col-md-2">
+                <div class="head">Teacher</div>
+                <div class="foot">{{ course.instructor_name }}</div>
+            </div>
+        </div>
+        <div class="col-md-2 brd" style="width: 100px;">
+            <div class="head">Categories</div>
+            <div class="foot">Backend</div>
+        </div>
+        <div class="col-md-3">
+            <div class="head">Reviews</div>
+            <div><span class="far fa-star"></span><span class="far fa-star"></span><span
+                    class="far fa-star"></span><span class="far fa-star"></span><span class="far fa-star"></span><span
+                    class="review">(0 Reviews)</span>
+            </div>
+        </div>
+        <div class="col-md-2 prc">
+            <div class="head"><del>₹80.00</del></div>
+            <div class="price">₹{{ course.price }}</div>
+        </div>
+        <div class="col-md-2 align-middle text-center">
+            <a class="btn atc" href="#" role="button">Add to Cart</a>
+            <a href="{% url 'course-registration' course.id%}" class="btn btn-primary">Buy Now</a>
+        </div>
+    </div>
+    <div>
+        <img src="{% static 'asset/coursedetail.jpg' %}" alt="" class="course-img" />
+    </div>
+
+    <!-- ============================ tablink and tabcontent starts ================================ -->
+    <div class="tabs">
+        <button class="tablink" onclick="openPage('Overview', this, 'white')"><i class="fa fa-bookmark"></i>
+            Overview</button>
+        <button class="tablink" onclick="openPage('Curriculum', this, 'white')" id="defaultOpen"><i
+                class="fas fa-cube"></i> Curriculum</button>
+        <button class="tablink" onclick="openPage('Instructor', this, 'white')"><i class="fas fa-user-graduate"></i>
+            Instructor</button>
+        <button class="tablink" onclick="openPage('Reviews', this, 'white')"><i class="fas fa-comments"></i>
+            Reviews</button>
+
+        <!-- ============================ Overview block starts ============================ -->
+        <div id="Overview" class="tabcontent">
+            <div class="row row1">
+                <div class="col-md-8">
+                    <h4>COURSE DESCRIPTION</h4>
+                    <p>{{ course.description }}</p><br>
+                    <h4>CERTIFICATION</h4>
+                    <p>{{ course.certification }}</p><br>
+                    <h4>LEARNING OUTCOMES</h4>
+                    <p>{{ course.learning_outcome }}</p>
+                </div>
+                <div class="col-md-4 line">
+                    <h4>COURSE FEATURES</h4>
+                    <div class="row row1 br">
+                        <p class="size"><i class="far fa-file-alt" style="color:blue"></i> Lectures <b> ({{
+                                lessons.count }})</b></p>
+                    </div>
+                    <div class="row row1 br">
+                        <p class="size"><i class="fas fa-puzzle-piece" style="color:blue"></i> Quizzes <b> (0)</b></p>
+                    </div>
+                    <div class="row row1 br">
+                        <p class="size"><i class="far fa-clock" style="color:blue"></i> Duration <b> (35 hours)</b></p>
+                    </div>
+                    <div class="row row1 br">
+                        <p class="size"><i class="fas fa-users" style="color:blue"></i> Students <b> (26)</b></p>
+                    </div>
+                    <div class="row row1 br">
+                        <p class="size"><i class="fas fa-clipboard-check" style="color:blue"></i> Assignments <b>
+                                (Yes)</b></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- ============================ Overview block ends ============================ -->
+
+
+        <!-- ============================ Curriculum block starts ============================ -->
+        <div id="Curriculum" class="tabcontent">
+            <a href="#video" data-toggle="collapse" style="text-decoration: none;color: black;"><i
+                    class="fas fa-chevron-up"></i> {{ course.course_name }} Course</a>
+            <div id="video" class="collapse">
+
+                <!-- If user has not registered to the course, then displaying only one lesson -->
+                {% if lesson %}
+                <div class="row row1 br">
+                    <p class="size"><i class="far fa-file-alt"></i> Lecture 1 &nbsp; &nbsp; <a
+                            href="{% url 'lesson-details' lesson.id %}"
+                            style="text-decoration: none;color: black;"><b>{{ lesson.lesson_title }} </b><i
+                                class="fas fa-eye" style="color:blue"></i></a></p>
+                </div>
+
+                <!-- If user has not registered to the course, starting lesson from 2 since first lesson has displayed above -->
+                {% for lesson in lessons|slice:"1:" %}
+                <div class="row row1 br">
+                    <p class="size"><i class="far fa-file-alt"></i> Lecture {{ forloop.counter | add:"1" }} &nbsp;
+                        &nbsp; <a href="{% url 'course-registration' course.id %}"
+                            style="text-decoration: none;color: black;"><b>{{ lesson.lesson_title }} </b><i
+                                class="fas fa-eye" style="color:blue"></i></a></p>
+                </div>
+                {% endfor %}
+                <!-- If user has registed to the course, then displaying all lessons -->
+                {% else %}
+                {% for lesson in lessons %}
+                <div class="row row1 br">
+                    <p class="size"><i class="far fa-file-alt"></i> Lecture {{ forloop.counter }} &nbsp; &nbsp; <a
+                            href="{% url 'lesson-details' lesson.id %}"
+                            style="text-decoration: none;color: black;"><b>{{ lesson.lesson_title }} </b><i
+                                class="fas fa-eye" style="color:blue"></i></a></p>
+                </div>
+                {% endfor %}
+                {% endif %}
+
+            </div>
+        </div>
+        <!-- ============================ Curriculum block ends ============================ -->
+
+
+        <!-- ============================ Instructor block starts ============================ -->
+        <div id="Instructor" class="tabcontent">
+            <div class="bcontent">
+                <div class="card" style="width:60%;">
+                    <div class="row no-gutters">
+                        <div class="col-sm-5">
+                            <img class="card-img"
+                                src="https://secure.gravatar.com/avatar/882fd629aa397978321234f427618705?s=110&d=mm&r=g"
+                                alt="Mic@Labthinker" style="border-radius: 50%">
+                        </div>
+                        <div class="col-sm-7">
+                            <div class="card-body">
+                                <h4 class="card-title">{{ course.instructor_name }}</h4>
+                                <p class="card-text text-muted">{{ course.instructor_name }} is a founder and technical
+                                    lead developer
+                                    in tutlane.</p>
+                                <a href="#" class="btn btn-primary">View Profile</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- ============================ Instructor block ends ============================ -->
+
+
+        <!-- ============================ Review block starts ============================ -->
+        <div id="Reviews" class="tabcontent">
+            <span class="heading">User Rating</span>
+            <span class="fa fa-star checked rate"></span>
+            <span class="fa fa-star checked rate"></span>
+            <span class="fa fa-star checked rate"></span>
+            <span class="fa fa-star checked rate"></span>
+            <span class="fa fa-star rate"></span>
+            <p>4.1 average based on 254 reviews.</p>
+            <hr style="border:3px solid #f1f1f1">
+
+            <div class="row row1">
+                <div class="side">
+                    <div>5 star</div>
+                </div>
+                <div class="middle">
+                    <div class="bar-container">
+                        <div class="bar-5"></div>
+                    </div>
+                </div>
+                <div class="side right">
+                    <div>150</div>
+                </div>
+                <div class="side">
+                    <div>4 star</div>
+                </div>
+                <div class="middle">
+                    <div class="bar-container">
+                        <div class="bar-4"></div>
+                    </div>
+                </div>
+                <div class="side right">
+                    <div>63</div>
+                </div>
+                <div class="side">
+                    <div>3 star</div>
+                </div>
+                <div class="middle">
+                    <div class="bar-container">
+                        <div class="bar-3"></div>
+                    </div>
+                </div>
+                <div class="side right">
+                    <div>15</div>
+                </div>
+                <div class="side">
+                    <div>2 star</div>
+                </div>
+                <div class="middle">
+                    <div class="bar-container">
+                        <div class="bar-2"></div>
+                    </div>
+                </div>
+                <div class="side right">
+                    <div>6</div>
+                </div>
+                <div class="side">
+                    <div>1 star</div>
+                </div>
+                <div class="middle">
+                    <div class="bar-container">
+                        <div class="bar-1"></div>
+                    </div>
+                </div>
+                <div class="side right">
+                    <div>20</div>
+                </div>
+            </div>
+        </div>
+        <!-- ============================ Review block ends ============================ -->
+    </div>
+    <!-- ============================ tablink and tabcontent ends ============================ -->
+
+
+
+    <!-- ============================ social media icons block starts ============================ -->
+    <ul class="list-inline">
+        <h4>Share: </h4>
+        <li>
+            <a href="#" class="btn-social btn-outline" style="text-decoration: none"><i style="color:aqua;"
+                    class="fab fa-twitter-square fa-2x"></i></a>
+        </li>
+        <li>
+            <a href="#" class="btn-social btn-outline" style="text-decoration: none"><i style="color:#4267B2;"
+                    class="fab fa-facebook-square fa-2x"></i></a>
+        </li>
+        <li>
+            <a href="#" class="btn-social btn-outline" style="text-decoration: none"><i style="color:purple;"
+                    class="fab fa-instagram fa-2x"></i></a>
+        </li>
+        <li>
+            <a href="#" class="btn-social btn-outline" style="text-decoration: none"><i style="color:#2170b5;"
+                    class="fab fa-linkedin fa-2x"></i></a>
+        </li>
+    </ul>
+    <!-- ============================ social media icons block ends ============================ -->
+
+</div>
+
+<script>
+    function openPage(pageName, elmnt, color) {
+        var i, tabcontent, tablinks;
+        tabcontent = document.getElementsByClassName("tabcontent");
+        for (i = 0; i < tabcontent.length; i++) {
+            tabcontent[i].style.display = "none";
+        }
+        tablinks = document.getElementsByClassName("tablink");
+        for (i = 0; i < tablinks.length; i++) {
+            tablinks[i].style.backgroundColor = "";
+        }
+        document.getElementById(pageName).style.display = "block";
+        elmnt.style.backgroundColor = color;
+    }
+
+    // Get the element with id="defaultOpen" and click on it
+    document.getElementById("defaultOpen").click();
+</script>
+
+{% endblock %}

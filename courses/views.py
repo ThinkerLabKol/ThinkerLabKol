@@ -4,13 +4,14 @@ from .models import *
 from django.core.paginator import Paginator
 from Thinker_Lab import settings
 from django.contrib import messages
+from django.contrib.auth.decorators import login_required
 
 # Razor Pay
 import razorpay
 from django.views.decorators.csrf import csrf_exempt
 
 
-
+# Displaying all courses on Dashboard
 def all_courses(request):
     courses = Course.objects.all()
     lessons = Lessons.objects.all()
@@ -38,18 +39,31 @@ def all_courses(request):
     return render(request, 'courses.html', context)
 
 
+# Displaying Details of any particular course
+@login_required(login_url='login-user')
 def course_details(request, id):
     course = Course.objects.get(id=id)
-    lessons = Lessons.objects.filter(course_name=course)
+    user = request.user
+    # Checking if user has registerd to current course and also paid for the course
+    validation = CourseRegistration.objects.filter(course_name=course).filter(email=user.email).filter(paid=True)
 
     context = {
         'course': course,
-        'lessons': lessons,
     }
+
+    # If user has not registered to current course then returning only 1 lesson
+    if not validation:
+        lesson = Lessons.objects.filter(course_name=course).first()
+        context['lesson'] = lesson
+    
+    lessons = Lessons.objects.filter(course_name=course)
+
+    context['lessons'] = lessons
 
     return render(request, 'course_details.html', context)
 
 
+# Displaying details of any particular lesson
 def lesson_details(request, id):
     lesson = Lessons.objects.get(id=id)
 
@@ -60,6 +74,8 @@ def lesson_details(request, id):
     return render(request, 'lesson_details.html', context)
 
 
+# Logic for Course Registration 
+@login_required(login_url='login-user')
 def course_registration(request, id):
     user = request.user
     course_name = Course.objects.get(id=id)
@@ -78,17 +94,21 @@ def course_registration(request, id):
         department = request.POST.get('dept')
         year_of_passing = request.POST.get('yop')
 
-        # Razor Pay 
+        # Razor Pay
         order_amount = course_price*100
         order_currency = 'INR'
         order_receipt = 'order_rcptid_11'
 
-        client = razorpay.Client(auth=(settings.RAZORPAY_KEY_ID, settings.RAZORPAY_SECRET_KEY))
-        payment = client.order.create({'amount': order_amount, 'currency': order_currency, 'receipt': order_receipt, 'payment_capture': '1'})
+        client = razorpay.Client(
+            auth=(settings.RAZORPAY_KEY_ID, settings.RAZORPAY_SECRET_KEY))
+        payment = client.order.create(
+            {'amount': order_amount, 'currency': order_currency, 'receipt': order_receipt, 'payment_capture': '1'})
 
-        registration = CourseRegistration(name=name, price=course_price, mobile_no=mobile_no, email=user.email, college=college, department=department, year_of_passing=year_of_passing, payment_id=payment['id'], course_name=course_name)
+        registration = CourseRegistration(name=name, price=course_price, mobile_no=mobile_no, email=user.email, college=college,
+                                          department=department, year_of_passing=year_of_passing, payment_id=payment['id'], course_name=course_name)
         registration.save()
-        messages.success(request, f'Congratulations! Your form has been submitted. Please complete the payment procedure for complete the registration')
+        messages.success(
+            request, f'Congratulations! Your form has been submitted. Please complete the payment procedure for complete the registration')
 
         context['name'] = name
         context['mobile_no'] = mobile_no
@@ -98,6 +118,8 @@ def course_registration(request, id):
 
     return render(request, 'course_registration.html', context)
 
+
+# Function for successful course payment
 @csrf_exempt
 def success(request):
     if request.method == "POST":
@@ -108,7 +130,7 @@ def success(request):
             if key == 'razorpay_order_id':
                 order_id = value
                 break
-        
+
         user = CourseRegistration.objects.filter(payment_id=order_id).first()
         user.paid = True
         user.save()
