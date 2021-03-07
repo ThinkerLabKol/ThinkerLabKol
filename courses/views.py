@@ -45,7 +45,8 @@ def course_details(request, id):
     course = Course.objects.get(id=id)
     user = request.user
     # Checking if user has registerd to current course and also paid for the course
-    validation = CourseRegistration.objects.filter(course_name=course).filter(email=user.email).filter(paid=True)
+    validation = CourseRegistration.objects.filter(
+        course_name=course).filter(email=user.email).filter(paid=True)
 
     context = {
         'course': course,
@@ -55,7 +56,7 @@ def course_details(request, id):
     if not validation:
         lesson = Lessons.objects.filter(course_name=course).first()
         context['lesson'] = lesson
-    
+
     lessons = Lessons.objects.filter(course_name=course)
 
     context['lessons'] = lessons
@@ -74,17 +75,17 @@ def lesson_details(request, id):
     return render(request, 'lesson_details.html', context)
 
 
-# Logic for Course Registration 
+# Logic for Course Registration
 @login_required(login_url='login-user')
 def course_registration(request, id):
     user = request.user
     course_name = Course.objects.get(id=id)
     course_price = course_name.price
+    free = Membership.objects.filter(membership_type='Free').first()
 
     context = {
         'user': user,
         'course_name': course_name,
-        'course_price': course_price,
     }
 
     if request.method == 'POST':
@@ -94,27 +95,38 @@ def course_registration(request, id):
         department = request.POST.get('dept')
         year_of_passing = request.POST.get('yop')
 
-        # Razor Pay
-        order_amount = course_price*100
-        order_currency = 'INR'
-        order_receipt = 'order_rcptid_11'
+        # If course is free then directly saving the registration form, no payment is needed
+        if course_name.course_type == free:
+            registration = CourseRegistration(name=name, mobile_no=mobile_no, email=user.email, college=college,
+                                              department=department, year_of_passing=year_of_passing, paid=True, course_name=course_name)
+            registration.save()
+            messages.success(
+                request, f'Congratulations! You have successfully registered for the course')
 
-        client = razorpay.Client(
-            auth=(settings.RAZORPAY_KEY_ID, settings.RAZORPAY_SECRET_KEY))
-        payment = client.order.create(
-            {'amount': order_amount, 'currency': order_currency, 'receipt': order_receipt, 'payment_capture': '1'})
+            return redirect('Home')
+            # If course is paid then proceeding payment method before saving registration form
+        else:
+            # Razor Pay
+            order_amount = course_price*100
+            order_currency = 'INR'
+            order_receipt = 'order_rcptid_11'
 
-        registration = CourseRegistration(name=name, price=course_price, mobile_no=mobile_no, email=user.email, college=college,
-                                          department=department, year_of_passing=year_of_passing, payment_id=payment['id'], course_name=course_name)
-        registration.save()
-        messages.success(
-            request, f'Congratulations! Your form has been submitted. Please complete the payment procedure for complete the registration')
+            client = razorpay.Client(
+                auth=(settings.RAZORPAY_KEY_ID, settings.RAZORPAY_SECRET_KEY))
+            payment = client.order.create(
+                {'amount': order_amount, 'currency': order_currency, 'receipt': order_receipt, 'payment_capture': '1'})
 
-        context['name'] = name
-        context['mobile_no'] = mobile_no
-        context['payment'] = payment
+            registration = CourseRegistration(name=name, mobile_no=mobile_no, email=user.email, college=college,
+                                              department=department, year_of_passing=year_of_passing, payment_id=payment['id'], course_name=course_name)
+            registration.save()
+            messages.success(
+                request, f'Congratulations! Your form has been submitted. Please complete the payment procedure for complete the registration')
 
-        return render(request, 'course_registration.html', context)
+            context['name'] = name
+            context['mobile_no'] = mobile_no
+            context['payment'] = payment
+
+            return render(request, 'course_registration.html', context)
 
     return render(request, 'course_registration.html', context)
 

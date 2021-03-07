@@ -37,7 +37,6 @@ class Course(models.Model):
 
 class CourseRegistration(models.Model):
     name = models.CharField(max_length=30, null=False, blank=False)
-    price = models.FloatField(default=0.00, null=False, blank=False)
     mobile_no = models.IntegerField(null=False, blank=False)
     email = models.EmailField(null=False, blank=False)
     college = models.CharField(max_length=100, null=False, blank=False)

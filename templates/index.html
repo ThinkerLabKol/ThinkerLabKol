@@ -3,7 +3,21 @@
 {% block content %}
 
 <div class="container-fluid">
+
     <section>
+
+        <!-- ========================= Displaying message rendered from view function Starts ===================== -->
+        <div class="container">
+            {% if messages %}
+            {% for message in messages %}
+            <div class="alert alert-{{ message.tags }}">
+                {{ message }}
+            </div>
+            {% endfor %}
+            {% endif %}
+        </div>
+        <!-- ========================= Displaying message rendered from view function Ends ===================== -->
+
         <div class="row">
             <div class="col-md-6 join text-center">
                 <h2 class="hi">Hi, Are You Confused ? How To Become A Great Programmer ?</h2>
