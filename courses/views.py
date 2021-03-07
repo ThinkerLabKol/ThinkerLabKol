@@ -2,9 +2,10 @@ from django.shortcuts import render, redirect
 from .models import *
 # from django.db.models import Q
 from django.core.paginator import Paginator
-from Thinker_Lab import settings
+from Thinker_Lab.settings import RAZORPAY_KEY_ID, RAZORPAY_SECRET_KEY, EMAIL_HOST_USER
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
+from django.core.mail import send_mail
 
 # Razor Pay
 import razorpay
@@ -112,7 +113,7 @@ def course_registration(request, id):
             order_receipt = 'order_rcptid_11'
 
             client = razorpay.Client(
-                auth=(settings.RAZORPAY_KEY_ID, settings.RAZORPAY_SECRET_KEY))
+                auth=(RAZORPAY_KEY_ID, RAZORPAY_SECRET_KEY))
             payment = client.order.create(
                 {'amount': order_amount, 'currency': order_currency, 'receipt': order_receipt, 'payment_capture': '1'})
 
@@ -135,6 +136,7 @@ def course_registration(request, id):
 @csrf_exempt
 def success(request):
     if request.method == "POST":
+        email = request.user.email
         dic = request.POST
         order_id = ''
 
@@ -146,5 +148,11 @@ def success(request):
         user = CourseRegistration.objects.filter(payment_id=order_id).first()
         user.paid = True
         user.save()
+
+        # Sending mail after successful payment for course registration
+        subject = 'Payment Successful'
+        message = 'Congratulations! Your payment has been received. Your Order ID: ' + order_id
+        reciepient = email
+        send_mail(subject, message, EMAIL_HOST_USER, [reciepient])
 
     return render(request, "success.html")
