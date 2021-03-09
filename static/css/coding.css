@@ -10,28 +10,7 @@ body{
 	overflow-x: hidden;
 	max-width: 100%;
 }
-.navbar-brand{
-  margin-top:-50px;
-  height: 180px;
-}
-.navbar-nav>li>a#logreg{
-  border-radius:20px;
-  border: 2px outset cyan;
-}
-.navbar-nav>li{
-  padding:6px;
-}
-.navbar-nav>li>a {
-    /*margin-top: 25px;*/
-    color:white !important;
-}
-.navbar-nav>li>a:hover{
-    border-bottom:1px solid cyan;
-}
-.navbar-nav>li>.dropdown>button {
-    margin-top: 25px !important;
-    text-decoration: none;
-}
+
 .dropdown .dropbtn { 
   border: none;
   outline: none;
@@ -76,25 +55,7 @@ nav{
 	background-color:#3846c8 !important;
 }
 
-.footer-below{
-color:white;
-background:black;
-padding:15px;
-}
-.footer-below h4{
-  font-size: 23px !important;
-}
-.footer-below p{
-  color:grey;
-}
-.footer-below p>a{
-  color:grey;
-  text-decoration: none;
-}
-.footer-below p> a:hover{
-  color:cyan !important;
-  text-decoration: none;
-}
+
 .upper{
   border-bottom:1px solid cyan;
   margin-bottom: 25px;
@@ -208,7 +169,7 @@ form button{
   padding:28px;
 }
 .arduino{
-  background-image: url('asset/arduino.jpeg');
+  background-image: url('/static/asset/arduino.jpeg');
   background-repeat: no-repeat;
   background-size: 100% 100%;
   padding:50px;
