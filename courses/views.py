@@ -55,8 +55,11 @@ def course_details(request, id):
 
     # If user has not registered to current course then returning only 1 lesson
     if not validation:
+        context['not registered'] = 'not registered'
         lesson = Lessons.objects.filter(course_name=course).first()
         context['lesson'] = lesson
+    else:
+        context['registered'] = 'registered'
 
     lessons = Lessons.objects.filter(course_name=course)
 

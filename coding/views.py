@@ -57,12 +57,10 @@ def coding_registration(request):
 # Fucntion for successful course payment
 @csrf_exempt
 def success(request):
-    print("======================Coding Registration call ho raha hai")
     if request.method == "POST":
         email = request.user.email
         dic = request.POST
         order_id = ''
-        print(dic)
 
         for key, value in dic.items():
             if key == 'razorpay_order_id':

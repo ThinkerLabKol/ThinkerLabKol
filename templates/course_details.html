@@ -37,7 +37,9 @@
         </div>
         <div class="col-md-2 align-middle text-center">
             <a class="btn atc" href="#" role="button">Add to Cart</a>
-            <a href="{% url 'course-registration' course.id%}" class="btn btn-primary">Buy Now</a>
+            {% if not registered %}
+            <a class="btn atc" href="{% url 'course-registration' course.id%}" role="button">Buy Now</a>
+            {% endif %}
         </div>
     </div>
     <div>
@@ -98,7 +100,7 @@
             <div id="video" class="collapse">
 
                 <!-- If user has not registered to the course, then displaying only one lesson -->
-                {% if lesson %}
+                {% if not registered %}
                 <div class="row row1 br">
                     <p class="size"><i class="far fa-file-alt"></i> Lecture 1 &nbsp; &nbsp; <a
                             href="{% url 'lesson-details' lesson.id %}"
@@ -115,7 +117,7 @@
                                 class="fas fa-eye" style="color:blue"></i></a></p>
                 </div>
                 {% endfor %}
-                <!-- If user has registed to the course, then displaying all lessons -->
+                <!-- If user has registered to the course, then displaying all lessons -->
                 {% else %}
                 {% for lesson in lessons %}
                 <div class="row row1 br">
