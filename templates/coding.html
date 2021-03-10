@@ -2,631 +2,703 @@
 {% load static %}
 
 {% block mycss %}
-    <link rel="stylesheet" href="{% static 'css/coding.css' %}">
+<link rel="stylesheet" href="{% static 'css/coding.css' %}">
 {% endblock %}
 
 {% block content %}
 <div class="container-fluid">
-    <section>
+  <section>
+    <div class="row">
+      <div class="col-md-6 join text-center">
+        <h1 class="hi">Coding and Robotics skills for the innovators of future</h1>
+        <h3>Live and personalized 1:1 classes for kids aged 6-18.</h3>
+        <img id="one" src="{% static 'asset/coding.png' %}" alt="coding kid" />
+      </div>
+      <div class="col-md-6 join">
+        <form action="">
+          <div class="form-group">
+            <label for="cname">Child's name</label>
+            <input type="text" class="form-control" placeholder="Enter child's name" id="cname" name="cname">
+          </div>
+          <div class="form-group">
+            <label for="pname">Parent's name</label>
+            <input type="text" class="form-control" placeholder="Enter parent's name" id="pname" name="pname">
+          </div>
+          <div class="form-group">
+            <label for="pnum">Parent's number</label>
+            <input type="tel" class="form-control" placeholder="Enter mobile number" id="pnum" name="pnum">
+          </div>
+          <div class="form-group">
+            <label for="pemail">Parent's email ID</label>
+            <input type="email" class="form-control" id="email" placeholder="Enter parent's email ID" name="email">
+          </div>
+          <div class="form-group">
+            <label for="class">Child's class</label>
+            <select class="form-control">
+              <option>1st</option>
+              <option>2nd</option>
+              <option>3rd</option>
+              <option>4th</option>
+              <option>5th</option>
+              <option>6th</option>
+              <option>7th</option>
+              <option>8th</option>
+              <option>9th</option>
+              <option>10th</option>
+              <option>11th</option>
+              <option>12th</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Do you have a laptop/PC for class?</label><br>
+            <label class="radio-inline"><input type="radio" name="gg"> Yes</label>
+            <label class="radio-inline"><input type="radio" name="gg"> No</label>
+          </div>
+          <div class="form-group">
+            <button type="submit" class="btn">BOOK A FREE TRIAL</button>
+          </div>
+          <div class="text-center">
+            <p>Already have an account? <a href="login.html">LOGIN</a></p>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="container">
+      <div class="certification">
+        <div class="row text-center">
+          <h3>Certified and Recognized by:</h3>
+        </div>
+        <div class="row text-center">
+          <div class="col-lg-4">
+            <img src="{% static 'asset/startup india.png' %}" alt="startup india" />
+            <p>Certificate No: DIPP50430</p>
+          </div>
+          <div class="col-lg-4">
+            <img src="{% static 'asset/msme-micro.png' %}" alt="msme-micro" />
+            <p>UAM No: WB10D0037064</p>
+          </div>
+          <div class="col-lg-4">
+            <img src="{% static 'asset/tie-silicon-logo.png' %}" alt="tie-silicon" />
+            <p>in top 50 startups</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container future">
+      <div class="row text-center">
+        <h1 class="hi">Make your child future ready</h1>
+        <h3>21st century workforce will be centered around new computational technologies like ML, AI, VR, AR,
+          Blockchain, IoT and Robotics. An early start to coding will make them the creators of tomorrow.</h3>
+      </div>
+      <div class="row text-center">
+        <div class="col-lg-4">
+          <img src="{% static 'asset/enhances-their-ability-to-build.jpg' %}" alt="" />
+          <h4>Enhances their critical thinking</h4>
+        </div>
+        <div class="col-lg-4">
+          <img src="{% static 'asset/enhances-their-ability-to-build.jpg' %}" alt="" />
+          <h4>Increases focus and concentration</h4>
+        </div>
+        <div class="col-lg-4">
+          <img src="{% static 'asset/enhances-their-ability-to-build.jpg' %}" alt="" />
+          <h4>Improves logic building</h4>
+        </div>
+      </div>
+      <div class="row text-center">
+        <div class="col-lg-4">
+          <img src="{% static 'asset/enhances-their-ability-to-build.jpg' %}" alt="" />
+          <h4>Sharpens problem solving skills</h4>
+        </div>
+        <div class="col-lg-4">
+          <img src="{% static 'asset/enhances-their-ability-to-build.jpg' %}" alt="" />
+          <h4>Increases creativity</h4>
+        </div>
+        <div class="col-lg-4">
+          <img src="{% static 'asset/enhances-their-ability-to-build.jpg' %}" alt="" />
+          <h4>Helps in communication</h4>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="container">
+    <div class="arduino">
+      <div class="row">
+        <div class="col-lg-6">
+          <style>
+            .embed-container {
+              position: relative;
+              padding-bottom: 56.25%;
+              height: 0;
+              overflow: hidden;
+              max-width: 100%;
+            }
+
+            .embed-container iframe,
+            .embed-container object,
+            .embed-container embed {
+              position: absolute;
+              top: 0;
+              left: 0;
+              width: 100%;
+              height: 100%;
+            }
+          </style>
+          <div class='embed-container'>
+            <iframe src='https://www.youtube-nocookie.com/embed/IpSPXClRsYo?modestbranding=1&showinfo=0&fs=0&rel=0'
+              frameborder='0' allowscreen>
+            </iframe>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <h1 class="hi">Light Blinking Project (In Arduino)</h1>
+          <p>This is very basic project to the enthusiastic who wants to start learning Arduino and Internet of Things.
+            We have created a simple program to blink LED within particular time interval.</p>
+          <div class="text-center">
+            <a class="button btn text-center" href="reg.html" type="button" target="_blank"><span>START FREE
+                TRIAL</span></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="courses ">
+      <h1 class="hi text-center">Courses designed for every child</h1>
+      <div class="w3-bar w3-black text-center">
+        <button class="w3-bar-item w3-button" onclick="openCity(event,'onee')">CLASSES 1-4</button>
+        <button class="w3-bar-item w3-button" onclick="openCity(event,'two')">CLASSES 5-8</button>
+        <button class="w3-bar-item w3-button" onclick="openCity(event,'three')">CLASSES 9-12</button>
+      </div>
+
+      <div id="onee" class="w3-container city">
         <div class="row">
-            <div class="col-md-6 join text-center">
-                    <h1 class="hi">Coding and Robotics skills for the innovators of future</h1>
-                    <h3>Live and personalized 1:1 classes for kids aged 6-18.</h3>
-                    <img id="one" src="{% static 'asset/coding.png' %}" alt="coding kid"/>
+          <div class="col-md-4">
+            <div class="card">
+              <div class="card-header">
+                <span class="badge badge-info">BASIC</span>
+              </div>
+              <div class="card-body">
+                <h3 class="card-title">Coding Fundamentals</h3>
+                <span class="text-muted classes">8 classes</span>
+                <span class="text-muted session">Rs. 700/- per session</span>
+                <hr>
+                <div class="card-text">
+                  <p class="text-muted">TOPICS COVERED</p>
+                  <p>Game Design, Machine Learning models, Apps published on playstore.</p>
+                  <p class="text-muted">
+                    TOOLS
+                  </p>
+                  <table class="table">
+                    <tr>
+                      <td><i class="fab fa-app-store"></i> Application Inventor</td>
+                      <td><i class="fas fa-laptop-code"></i> Code Editor</td>
+                    </tr>
+                    <tr>
+                      <td><i class="fab fa-linode"></i> Scratch</td>
+                    </tr>
+                  </table>
+                  <p class="text-muted">
+                    PROJECTS
+                  </p>
+                  <table class="table">
+                    <tr>
+                      <td><i class="fab fa-android"></i> Android Application</td>
+                      <td><i class="fas fa-music"></i> Musical Band</td>
+                    </tr>
+                    <tr>
+                      <td><i class="fas fa-robot"></i> Artificial Intelligence</td>
+                      <td><i class="fas fa-chess"></i> Games</td>
+                    </tr>
+                    <tr>
+                      <td><i class="fab fa-html5"></i> Web Page Design</td>
+                    </tr>
+                  </table>
+                  <a href="#">KNOW MORE ABOUT CURRICULUM</a>
+                </div>
+                <div class="card-footer">
+                  <hr>
+                  <span><b class="price"> Rs. 5600</b><strike class="text-muted striked">Rs. 6000</strike></span><span
+                    class="badge badge-success discount">7% OFF</span>
+                  <a href="{% url 'coding-registration' %}" class="btn">JOIN NOW</a>
+                </div> 
+              </div>
             </div>
-            <div class="col-md-6 join">
-                <form action="">
-                    <div class="form-group">
-                        <label for="cname">Child's name</label>
-                            <input type="text" class="form-control" placeholder="Enter child's name" id="cname" name="cname">
-                    </div>
-                    <div class="form-group">
-                        <label for="pname">Parent's name</label>
-                            <input type="text" class="form-control" placeholder="Enter parent's name" id="pname" name="pname">
-                    </div>
-                    <div class="form-group">
-                        <label for="pnum">Parent's number</label>
-                            <input type="tel" class="form-control" placeholder="Enter mobile number" id="pnum" name="pnum">
-                    </div>
-                    <div class="form-group">
-                        <label for="pemail">Parent's email ID</label>
-                              <input type="email" class="form-control" id="email" placeholder="Enter parent's email ID" name="email">
-                      </div>
-                      <div class="form-group">
-                          <label for="class">Child's class</label>
-                              <select class="form-control">
-                                <option>1st</option>
-                                <option>2nd</option>
-                                <option>3rd</option>
-                                <option>4th</option>
-                                <option>5th</option>
-                                <option>6th</option>
-                                <option>7th</option>
-                                <option>8th</option>
-                                <option>9th</option>
-                                <option>10th</option>
-                                <option>11th</option>
-                                <option>12th</option>
-                              </select>
-                    </div>
-                    <div class="form-group">
-                          <label>Do you have a laptop/PC for class?</label><br>
-                          <label class="radio-inline"><input type="radio" name="gg"> Yes</label>
-                        <label class="radio-inline"><input type="radio" name="gg"> No</label>
-                    </div>
-                    <div class="form-group">
-                        <button type="submit" class="btn">BOOK A FREE TRIAL</button>
-                    </div>
-                    <div class="text-center">
-                        <p>Already have an account? <a href="login.html">LOGIN</a></p>
-                    </div>
-                  </form>
+          </div>
+          <div class="col-md-4">
+            <div class="card">
+              <div class="card-header">
+                <span class="badge badge-standard">STANDARD</span>
+              </div>
+              <div class="card-body">
+                <h3 class="card-title">Advanced Coding</h3>
+                <span class="text-muted classes">48 classes</span>
+                <span class="text-muted session">Rs. 667/- per session</span>
+                <hr>
+                <div class="card-text">
+                  <p class="text-muted">TOPICS COVERED</p>
+                  <p>Game Design, Machine Learning models, Apps published on playstore.</p>
+                  <p class="text-muted">
+                    TOOLS
+                  </p>
+                  <table class="table">
+                    <tr>
+                      <td><i class="fab fa-app-store"></i> Application Inventor</td>
+                      <td><i class="fas fa-laptop-code"></i> Code Editor</td>
+                    </tr>
+                    <tr>
+                      <td><i class="fab fa-linode"></i> Scratch</td>
+                    </tr>
+                  </table>
+                  <p class="text-muted">
+                    PROJECTS
+                  </p>
+                  <table class="table">
+                    <tr>
+                      <td><i class="fab fa-android"></i> Android Application</td>
+                      <td><i class="fas fa-music"></i> Musical Band</td>
+                    </tr>
+                    <tr>
+                      <td><i class="fas fa-robot"></i> Artificial Intelligence</td>
+                      <td><i class="fas fa-chess"></i> Games</td>
+                    </tr>
+                    <tr>
+                      <td><i class="fab fa-html5"></i> Web Page Design</td>
+                    </tr>
+                  </table>
+                  <a href="#">KNOW MORE ABOUT CURRICULUM</a>
+                </div>
+                <div class="card-footer">
+                  <hr>
+                  <span><b class="price"> Rs. 32,000</b><strike class="text-muted striked">Rs.
+                      36,000</strike></span><span class="badge badge-success discount">11% OFF</span><br>
+                  <a href="reg.html" class="btn">JOIN NOW</a>
+                </div>
+              </div>
             </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card">
+              <div class="card-header">
+                <span class="badge badge-premium">PREMIUM</span>
+              </div>
+              <div class="card-body">
+                <h3 class="card-title">Game & App Development</h3>
+                <span class="text-muted classes">144 classes</span>
+                <span class="text-muted session">Rs. 660/- per session</span>
+                <hr>
+                <div class="card-text">
+                  <p class="text-muted">TOPICS COVERED</p>
+                  <p>Game Design, Machine Learning models, Apps published on playstore.</p>
+                  <p class="text-muted">
+                    TOOLS
+                  </p>
+                  <table class="table">
+                    <tr>
+                      <td><i class="fab fa-app-store"></i> Application Inventor</td>
+                      <td><i class="fas fa-laptop-code"></i> Code Editor</td>
+                    </tr>
+                    <tr>
+                      <td><i class="fab fa-linode"></i> Scratch</td>
+                    </tr>
+                  </table>
+                  <p class="text-muted">
+                    PROJECTS
+                  </p>
+                  <table class="table">
+                    <tr>
+                      <td><i class="fab fa-android"></i> Android Application</td>
+                      <td><i class="fas fa-music"></i> Musical Band</td>
+                    </tr>
+                    <tr>
+                      <td><i class="fas fa-robot"></i> Artificial Intelligence</td>
+                      <td><i class="fas fa-chess"></i> Games</td>
+                    </tr>
+                    <tr>
+                      <td><i class="fab fa-html5"></i> Web Page Design</td>
+                    </tr>
+                  </table>
+                  <a href="#">KNOW MORE ABOUT CURRICULUM</a>
+                </div>
+                <div class="card-footer">
+                  <hr>
+                  <span><b class="price"> Rs. 95,000</b><strike class="text-muted striked">Rs.
+                      1,08,000</strike></span><span class="badge badge-success discount">12% OFF</span><br>
+                  <a href="reg.html" class="btn">JOIN NOW</a>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-        <div class="container">
-        <div class="certification">
-        <div class="row text-center">
-            <h3>Certified and Recognized by:</h3>
-        </div>
-        <div class="row text-center">
-            <div class="col-lg-4">
-                <img src="{% static 'asset/startup india.png' %}" alt="startup india"/>
-                <p>Certificate No: DIPP50430</p>
-            </div>
-            <div class="col-lg-4">
-                <img src="{% static 'asset/msme-micro.png' %}" alt="msme-micro"/>
-                <p>UAM No: WB10D0037064</p>
-            </div>
-            <div class="col-lg-4">
-                <img src="{% static 'asset/tie-silicon-logo.png' %}" alt="tie-silicon"/>
-                <p>in top 50 startups</p>
-            </div>
-        </div>
-        </div>
-        </div>
-        <div class="container future">
-        <div class="row text-center">
-            <h1 class="hi">Make your child future ready</h1>
-                <h3>21st century workforce will be centered around new computational technologies like ML, AI, VR, AR, Blockchain, IoT and Robotics. An early start to coding will make them the creators of tomorrow.</h3>
-        </div>
-        <div class="row text-center">
-            <div class="col-lg-4">
-                <img src="{% static 'asset/enhances-their-ability-to-build.jpg' %}" alt=""/>
-                <h4>Enhances their critical thinking</h4>
-            </div>
-            <div class="col-lg-4">
-                <img src="{% static 'asset/enhances-their-ability-to-build.jpg' %}" alt=""/>
-                <h4>Increases focus and concentration</h4>
-            </div>
-            <div class="col-lg-4">
-                <img src="{% static 'asset/enhances-their-ability-to-build.jpg' %}" alt=""/>
-                <h4>Improves logic building</h4>
-            </div>
-        </div>
-        <div class="row text-center">
-            <div class="col-lg-4">
-                <img src="{% static 'asset/enhances-their-ability-to-build.jpg' %}" alt=""/>
-                <h4>Sharpens problem solving skills</h4>
-            </div>
-            <div class="col-lg-4">
-                <img src="{% static 'asset/enhances-their-ability-to-build.jpg' %}" alt=""/>
-                <h4>Increases creativity</h4>
-            </div>
-            <div class="col-lg-4">
-                <img src="{% static 'asset/enhances-their-ability-to-build.jpg' %}" alt=""/>
-                <h4>Helps in communication</h4>
-            </div>
-        </div>
-        </div>
-    </section>
+      </div>
 
-    <div class="container">
-        <div class="arduino">
-            <div class="row">
-                <div class="col-lg-6">
-                  <style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style>
-                  <div class='embed-container'>
-                    <iframe src='https://www.youtube-nocookie.com/embed/IpSPXClRsYo?modestbranding=1&showinfo=0&fs=0&rel=0' frameborder='0' allowscreen>
-                    </iframe>
-                  </div>
+      <div id="two" class="w3-container city" style="display:none">
+        <div class="row">
+          <div class="col-md-4">
+            <div class="card">
+              <div class="card-header">
+                <span class="badge badge-info">BASIC</span>
+              </div>
+              <div class="card-body">
+                <h3 class="card-title">Coding Fundamentals</h3>
+                <span class="text-muted classes">8 classes</span>
+                <span class="text-muted session">Rs. 700/- per session</span>
+                <hr>
+                <div class="card-text">
+                  <p class="text-muted">TOPICS COVERED</p>
+                  <p>Game Design, Machine Learning models, Apps published on playstore.</p>
+                  <p class="text-muted">
+                    TOOLS
+                  </p>
+                  <table class="table">
+                    <tr>
+                      <td><i class="fab fa-app-store"></i> Application Inventor</td>
+                      <td><i class="fas fa-laptop-code"></i> Code Editor</td>
+                    </tr>
+                    <tr>
+                      <td><i class="fab fa-linode"></i> Scratch</td>
+                    </tr>
+                  </table>
+                  <p class="text-muted">
+                    PROJECTS
+                  </p>
+                  <table class="table">
+                    <tr>
+                      <td><i class="fab fa-android"></i> Android Application</td>
+                      <td><i class="fas fa-music"></i> Musical Band</td>
+                    </tr>
+                    <tr>
+                      <td><i class="fas fa-robot"></i> Artificial Intelligence</td>
+                      <td><i class="fas fa-chess"></i> Games</td>
+                    </tr>
+                    <tr>
+                      <td><i class="fab fa-html5"></i> Web Page Design</td>
+                    </tr>
+                  </table>
+                  <a href="#">KNOW MORE ABOUT CURRICULUM</a>
                 </div>
-                <div class="col-lg-6">
-                    <h1 class="hi">Light Blinking Project (In Arduino)</h1>
-                    <p>This is very basic project to the enthusiastic who wants to start learning Arduino and Internet of Things. We have created a simple program to blink LED within particular time interval.</p>
-                    <div class="text-center">
-                    <a class="button btn text-center" href="reg.html" type="button" target="_blank"><span>START FREE TRIAL</span></a></div>
+                <div class="card-footer">
+                  <hr>
+                  <span><b class="price"> Rs. 5600</b><strike class="text-muted striked">Rs. 6000</strike></span><span
+                    class="badge badge-success discount">7% OFF</span>
+                  <a href="reg.html" class="btn">JOIN NOW</a>
                 </div>
+              </div>
             </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card">
+              <div class="card-header">
+                <span class="badge badge-standard">STANDARD</span>
+              </div>
+              <div class="card-body">
+                <h3 class="card-title">Advanced Coding</h3>
+                <span class="text-muted classes">48 classes</span>
+                <span class="text-muted session">Rs. 667/- per session</span>
+                <hr>
+                <div class="card-text">
+                  <p class="text-muted">TOPICS COVERED</p>
+                  <p>Game Design, Machine Learning models, Apps published on playstore.</p>
+                  <p class="text-muted">
+                    TOOLS
+                  </p>
+                  <table class="table">
+                    <tr>
+                      <td><i class="fab fa-app-store"></i> Application Inventor</td>
+                      <td><i class="fas fa-laptop-code"></i> Code Editor</td>
+                    </tr>
+                    <tr>
+                      <td><i class="fab fa-linode"></i> Scratch</td>
+                    </tr>
+                  </table>
+                  <p class="text-muted">
+                    PROJECTS
+                  </p>
+                  <table class="table">
+                    <tr>
+                      <td><i class="fab fa-android"></i> Android Application</td>
+                      <td><i class="fas fa-music"></i> Musical Band</td>
+                    </tr>
+                    <tr>
+                      <td><i class="fas fa-robot"></i> Artificial Intelligence</td>
+                      <td><i class="fas fa-chess"></i> Games</td>
+                    </tr>
+                    <tr>
+                      <td><i class="fab fa-html5"></i> Web Page Design</td>
+                    </tr>
+                  </table>
+                  <a href="#">KNOW MORE ABOUT CURRICULUM</a>
+                </div>
+                <div class="card-footer">
+                  <hr>
+                  <span><b class="price"> Rs. 32,000</b><strike class="text-muted striked">Rs.
+                      36,000</strike></span><span class="badge badge-success discount">11% OFF</span><br>
+                  <a href="reg.html" class="btn">JOIN NOW</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card">
+              <div class="card-header">
+                <span class="badge badge-premium">PREMIUM</span>
+              </div>
+              <div class="card-body">
+                <h3 class="card-title">Game & App Development</h3>
+                <span class="text-muted classes">144 classes</span>
+                <span class="text-muted session">Rs. 660/- per session</span>
+                <hr>
+                <div class="card-text">
+                  <p class="text-muted">TOPICS COVERED</p>
+                  <p>Game Design, Machine Learning models, Apps published on playstore.</p>
+                  <p class="text-muted">
+                    TOOLS
+                  </p>
+                  <table class="table">
+                    <tr>
+                      <td><i class="fab fa-app-store"></i> Application Inventor</td>
+                      <td><i class="fas fa-laptop-code"></i> Code Editor</td>
+                    </tr>
+                    <tr>
+                      <td><i class="fab fa-linode"></i> Scratch</td>
+                    </tr>
+                  </table>
+                  <p class="text-muted">
+                    PROJECTS
+                  </p>
+                  <table class="table">
+                    <tr>
+                      <td><i class="fab fa-android"></i> Android Application</td>
+                      <td><i class="fas fa-music"></i> Musical Band</td>
+                    </tr>
+                    <tr>
+                      <td><i class="fas fa-robot"></i> Artificial Intelligence</td>
+                      <td><i class="fas fa-chess"></i> Games</td>
+                    </tr>
+                    <tr>
+                      <td><i class="fab fa-html5"></i> Web Page Design</td>
+                    </tr>
+                  </table>
+                  <a href="#">KNOW MORE ABOUT CURRICULUM</a>
+                </div>
+                <div class="card-footer">
+                  <hr>
+                  <span><b class="price"> Rs. 95,000</b><strike class="text-muted striked">Rs.
+                      1,08,000</strike></span><span class="badge badge-success discount">12% OFF</span><br>
+                  <a href="reg.html" class="btn">JOIN NOW</a>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
+      </div>
+
+      <div id="three" class="w3-container city" style="display:none">
+        <div class="row">
+          <div class="col-md-4">
+            <div class="card">
+              <div class="card-header">
+                <span class="badge badge-info">BASIC</span>
+              </div>
+              <div class="card-body">
+                <h3 class="card-title">Coding Fundamentals</h3>
+                <span class="text-muted classes">8 classes</span>
+                <span class="text-muted session">Rs. 700/- per session</span>
+                <hr>
+                <div class="card-text">
+                  <p class="text-muted">TOPICS COVERED</p>
+                  <p>Game Design, Machine Learning models, Apps published on playstore.</p>
+                  <p class="text-muted">
+                    TOOLS
+                  </p>
+                  <table class="table">
+                    <tr>
+                      <td><i class="fab fa-app-store"></i> Application Inventor</td>
+                      <td><i class="fas fa-laptop-code"></i> Code Editor</td>
+                    </tr>
+                    <tr>
+                      <td><i class="fab fa-linode"></i> Scratch</td>
+                    </tr>
+                  </table>
+                  <p class="text-muted">
+                    PROJECTS
+                  </p>
+                  <table class="table">
+                    <tr>
+                      <td><i class="fab fa-android"></i> Android Application</td>
+                      <td><i class="fas fa-music"></i> Musical Band</td>
+                    </tr>
+                    <tr>
+                      <td><i class="fas fa-robot"></i> Artificial Intelligence</td>
+                      <td><i class="fas fa-chess"></i> Games</td>
+                    </tr>
+                    <tr>
+                      <td><i class="fab fa-html5"></i> Web Page Design</td>
+                    </tr>
+                  </table>
+                  <a href="#">KNOW MORE ABOUT CURRICULUM</a>
+                </div>
+                <div class="card-footer">
+                  <hr>
+                  <span><b class="price"> Rs. 5600</b><strike class="text-muted striked">Rs. 6000</strike></span><span
+                    class="badge badge-success discount">7% OFF</span>
+                  <a href="reg.html" class="btn">JOIN NOW</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card">
+              <div class="card-header">
+                <span class="badge badge-standard">STANDARD</span>
+              </div>
+              <div class="card-body">
+                <h3 class="card-title">Advanced Coding</h3>
+                <span class="text-muted classes">48 classes</span>
+                <span class="text-muted session">Rs. 667/- per session</span>
+                <hr>
+                <div class="card-text">
+                  <p class="text-muted">TOPICS COVERED</p>
+                  <p>Game Design, Machine Learning models, Apps published on playstore.</p>
+                  <p class="text-muted">
+                    TOOLS
+                  </p>
+                  <table class="table">
+                    <tr>
+                      <td><i class="fab fa-app-store"></i> Application Inventor</td>
+                      <td><i class="fas fa-laptop-code"></i> Code Editor</td>
+                    </tr>
+                    <tr>
+                      <td><i class="fab fa-linode"></i> Scratch</td>
+                    </tr>
+                  </table>
+                  <p class="text-muted">
+                    PROJECTS
+                  </p>
+                  <table class="table">
+                    <tr>
+                      <td><i class="fab fa-android"></i> Android Application</td>
+                      <td><i class="fas fa-music"></i> Musical Band</td>
+                    </tr>
+                    <tr>
+                      <td><i class="fas fa-robot"></i> Artificial Intelligence</td>
+                      <td><i class="fas fa-chess"></i> Games</td>
+                    </tr>
+                    <tr>
+                      <td><i class="fab fa-html5"></i> Web Page Design</td>
+                    </tr>
+                  </table>
+                  <a href="#">KNOW MORE ABOUT CURRICULUM</a>
+                </div>
+                <div class="card-footer">
+                  <hr>
+                  <span><b class="price"> Rs. 32,000</b><strike class="text-muted striked">Rs.
+                      36,000</strike></span><span class="badge badge-success discount">11% OFF</span><br>
+                  <a href="reg.html" class="btn">JOIN NOW</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card">
+              <div class="card-header">
+                <span class="badge badge-premium">PREMIUM</span>
+              </div>
+              <div class="card-body">
+                <h3 class="card-title">Game & App Development</h3>
+                <span class="text-muted classes">144 classes</span>
+                <span class="text-muted session">Rs. 660/- per session</span>
+                <hr>
+                <div class="card-text">
+                  <p class="text-muted">TOPICS COVERED</p>
+                  <p>Game Design, Machine Learning models, Apps published on playstore.</p>
+                  <p class="text-muted">
+                    TOOLS
+                  </p>
+                  <table class="table">
+                    <tr>
+                      <td><i class="fab fa-app-store"></i> Application Inventor</td>
+                      <td><i class="fas fa-laptop-code"></i> Code Editor</td>
+                    </tr>
+                    <tr>
+                      <td><i class="fab fa-linode"></i> Scratch</td>
+                    </tr>
+                  </table>
+                  <p class="text-muted">
+                    PROJECTS
+                  </p>
+                  <table class="table">
+                    <tr>
+                      <td><i class="fab fa-android"></i> Android Application</td>
+                      <td><i class="fas fa-music"></i> Musical Band</td>
+                    </tr>
+                    <tr>
+                      <td><i class="fas fa-robot"></i> Artificial Intelligence</td>
+                      <td><i class="fas fa-chess"></i> Games</td>
+                    </tr>
+                    <tr>
+                      <td><i class="fab fa-html5"></i> Web Page Design</td>
+                    </tr>
+                  </table>
+                  <a href="#">KNOW MORE ABOUT CURRICULUM</a>
+                </div>
+                <div class="card-footer">
+                  <hr>
+                  <span><b class="price"> Rs. 95,000</b><strike class="text-muted striked">Rs.
+                      1,08,000</strike></span><span class="badge badge-success discount">12% OFF</span><br>
+                  <a href="reg.html" class="btn">JOIN NOW</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
+  </div>
 
-    <div class="container">
-        <div class="courses ">
-            <h1 class="hi text-center">Courses designed for every child</h1>
-            <div class="w3-bar w3-black text-center">
-              <button class="w3-bar-item w3-button" onclick="openCity(event,'onee')">CLASSES 1-4</button>
-              <button class="w3-bar-item w3-button" onclick="openCity(event,'two')">CLASSES 5-8</button>
-              <button class="w3-bar-item w3-button" onclick="openCity(event,'three')">CLASSES 9-12</button>
-            </div>
-
-            <div id="onee" class="w3-container city">
-                <div class="row">
-                    <div class="col-md-4">
-                          <div class="card">
-                          <div class="card-header">
-                            <span class="badge badge-info">BASIC</span>
-                          </div>
-                          <div class="card-body">
-                            <h3 class="card-title">Coding Fundamentals</h3>
-                            <span class="text-muted classes">8 classes</span>
-                            <span class="text-muted session">Rs. 700/- per session</span>
-                            <hr>
-                            <div class="card-text"><p class="text-muted">TOPICS COVERED</p><p>Game Design, Machine Learning models, Apps published on playstore.</p>
-                            <p class="text-muted">
-                              TOOLS
-                            </p>
-                            <table class="table">
-                              <tr>
-                                  <td><i class="fab fa-app-store"></i> Application Inventor</td>
-                                  <td><i class="fas fa-laptop-code"></i> Code Editor</td>
-                              </tr>
-                              <tr>
-                                  <td><i class="fab fa-linode"></i> Scratch</td>
-                              </tr>
-                            </table>
-                            <p class="text-muted">
-                              PROJECTS
-                            </p>
-                            <table class="table">
-                              <tr>
-                                  <td><i class="fab fa-android"></i> Android Application</td>
-                                  <td><i class="fas fa-music"></i> Musical Band</td>
-                              </tr>
-                              <tr>
-                                  <td><i class="fas fa-robot"></i> Artificial Intelligence</td>
-                                  <td><i class="fas fa-chess"></i> Games</td>
-                              </tr>
-                              <tr>
-                                  <td><i class="fab fa-html5"></i> Web Page Design</td>
-                              </tr>
-                            </table>
-                            <a href="#">KNOW MORE ABOUT CURRICULUM</a></div>
-                            <div class="card-footer">
-                            <hr>
-                            <span><b class="price"> Rs. 5600</b><strike class="text-muted striked">Rs. 6000</strike></span><span class="badge badge-success discount">7% OFF</span>
-                            <a href="reg.html" class="btn">JOIN NOW</a></div>
-                          </div>
-                          </div>
-                    </div>
-                    <div class="col-md-4">
-                          <div class="card">
-                          <div class="card-header">
-                            <span class="badge badge-standard">STANDARD</span>
-                          </div>
-                          <div class="card-body">
-                            <h3 class="card-title">Advanced Coding</h3>
-                            <span class="text-muted classes">48 classes</span>
-                            <span class="text-muted session">Rs. 667/- per session</span>
-                            <hr>
-                            <div class="card-text"><p class="text-muted">TOPICS COVERED</p><p>Game Design, Machine Learning models, Apps published on playstore.</p>
-                            <p class="text-muted">
-                              TOOLS
-                            </p>
-                            <table class="table">
-                              <tr>
-                                  <td><i class="fab fa-app-store"></i> Application Inventor</td>
-                                  <td><i class="fas fa-laptop-code"></i> Code Editor</td>
-                              </tr>
-                              <tr>
-                                  <td><i class="fab fa-linode"></i> Scratch</td>
-                              </tr>
-                            </table>
-                            <p class="text-muted">
-                              PROJECTS
-                            </p>
-                            <table class="table">
-                              <tr>
-                                  <td><i class="fab fa-android"></i> Android Application</td>
-                                  <td><i class="fas fa-music"></i> Musical Band</td>
-                              </tr>
-                              <tr>
-                                  <td><i class="fas fa-robot"></i> Artificial Intelligence</td>
-                                  <td><i class="fas fa-chess"></i> Games</td>
-                              </tr>
-                              <tr>
-                                  <td><i class="fab fa-html5"></i> Web Page Design</td>
-                              </tr>
-                            </table>
-                            <a href="#">KNOW MORE ABOUT CURRICULUM</a></div>
-                            <div class="card-footer">
-                            <hr>
-                            <span><b class="price"> Rs. 32,000</b><strike class="text-muted striked">Rs. 36,000</strike></span><span class="badge badge-success discount">11% OFF</span><br>
-                            <a href="reg.html" class="btn">JOIN NOW</a></div>
-                          </div>
-                          </div>
-                    </div>
-                    <div class="col-md-4">
-                          <div class="card">
-                          <div class="card-header">
-                            <span class="badge badge-premium">PREMIUM</span>
-                          </div>
-                          <div class="card-body">
-                            <h3 class="card-title">Game & App Development</h3>
-                            <span class="text-muted classes">144 classes</span>
-                            <span class="text-muted session">Rs. 660/- per session</span>
-                            <hr>
-                            <div class="card-text"><p class="text-muted">TOPICS COVERED</p><p>Game Design, Machine Learning models, Apps published on playstore.</p>
-                            <p class="text-muted">
-                              TOOLS
-                            </p>
-                            <table class="table">
-                              <tr>
-                                  <td><i class="fab fa-app-store"></i> Application Inventor</td>
-                                  <td><i class="fas fa-laptop-code"></i> Code Editor</td>
-                              </tr>
-                              <tr>
-                                  <td><i class="fab fa-linode"></i> Scratch</td>
-                              </tr>
-                            </table>
-                            <p class="text-muted">
-                              PROJECTS
-                            </p>
-                            <table class="table">
-                              <tr>
-                                  <td><i class="fab fa-android"></i> Android Application</td>
-                                  <td><i class="fas fa-music"></i> Musical Band</td>
-                              </tr>
-                              <tr>
-                                  <td><i class="fas fa-robot"></i> Artificial Intelligence</td>
-                                  <td><i class="fas fa-chess"></i> Games</td>
-                              </tr>
-                              <tr>
-                                  <td><i class="fab fa-html5"></i> Web Page Design</td>
-                              </tr>
-                            </table>
-                            <a href="#">KNOW MORE ABOUT CURRICULUM</a></div>
-                            <div class="card-footer">
-                            <hr>
-                            <span><b class="price"> Rs. 95,000</b><strike class="text-muted striked">Rs. 1,08,000</strike></span><span class="badge badge-success discount">12% OFF</span><br>
-                            <a href="reg.html" class="btn">JOIN NOW</a></div>
-                          </div>
-                          </div>
-                    </div>
-                </div>
-            </div>
-
-            <div id="two" class="w3-container city" style="display:none">
-              <div class="row">
-                    <div class="col-md-4">
-                          <div class="card">
-                          <div class="card-header">
-                            <span class="badge badge-info">BASIC</span>
-                          </div>
-                          <div class="card-body">
-                            <h3 class="card-title">Coding Fundamentals</h3>
-                            <span class="text-muted classes">8 classes</span>
-                            <span class="text-muted session">Rs. 700/- per session</span>
-                            <hr>
-                            <div class="card-text"><p class="text-muted">TOPICS COVERED</p><p>Game Design, Machine Learning models, Apps published on playstore.</p>
-                            <p class="text-muted">
-                              TOOLS
-                            </p>
-                            <table class="table">
-                              <tr>
-                                  <td><i class="fab fa-app-store"></i> Application Inventor</td>
-                                  <td><i class="fas fa-laptop-code"></i> Code Editor</td>
-                              </tr>
-                              <tr>
-                                  <td><i class="fab fa-linode"></i> Scratch</td>
-                              </tr>
-                            </table>
-                            <p class="text-muted">
-                              PROJECTS
-                            </p>
-                            <table class="table">
-                              <tr>
-                                  <td><i class="fab fa-android"></i> Android Application</td>
-                                  <td><i class="fas fa-music"></i> Musical Band</td>
-                              </tr>
-                              <tr>
-                                  <td><i class="fas fa-robot"></i> Artificial Intelligence</td>
-                                  <td><i class="fas fa-chess"></i> Games</td>
-                              </tr>
-                              <tr>
-                                  <td><i class="fab fa-html5"></i> Web Page Design</td>
-                              </tr>
-                            </table>
-                            <a href="#">KNOW MORE ABOUT CURRICULUM</a></div>
-                            <div class="card-footer">
-                            <hr>
-                            <span><b class="price"> Rs. 5600</b><strike class="text-muted striked">Rs. 6000</strike></span><span class="badge badge-success discount">7% OFF</span>
-                            <a href="reg.html" class="btn">JOIN NOW</a></div>
-                          </div>
-                          </div>
-                    </div>
-                    <div class="col-md-4">
-                          <div class="card">
-                          <div class="card-header">
-                            <span class="badge badge-standard">STANDARD</span>
-                          </div>
-                          <div class="card-body">
-                            <h3 class="card-title">Advanced Coding</h3>
-                            <span class="text-muted classes">48 classes</span>
-                            <span class="text-muted session">Rs. 667/- per session</span>
-                            <hr>
-                            <div class="card-text"><p class="text-muted">TOPICS COVERED</p><p>Game Design, Machine Learning models, Apps published on playstore.</p>
-                            <p class="text-muted">
-                              TOOLS
-                            </p>
-                            <table class="table">
-                              <tr>
-                                  <td><i class="fab fa-app-store"></i> Application Inventor</td>
-                                  <td><i class="fas fa-laptop-code"></i> Code Editor</td>
-                              </tr>
-                              <tr>
-                                  <td><i class="fab fa-linode"></i> Scratch</td>
-                              </tr>
-                            </table>
-                            <p class="text-muted">
-                              PROJECTS
-                            </p>
-                            <table class="table">
-                              <tr>
-                                  <td><i class="fab fa-android"></i> Android Application</td>
-                                  <td><i class="fas fa-music"></i> Musical Band</td>
-                              </tr>
-                              <tr>
-                                  <td><i class="fas fa-robot"></i> Artificial Intelligence</td>
-                                  <td><i class="fas fa-chess"></i> Games</td>
-                              </tr>
-                              <tr>
-                                  <td><i class="fab fa-html5"></i> Web Page Design</td>
-                              </tr>
-                            </table>
-                            <a href="#">KNOW MORE ABOUT CURRICULUM</a></div>
-                            <div class="card-footer">
-                            <hr>
-                            <span><b class="price"> Rs. 32,000</b><strike class="text-muted striked">Rs. 36,000</strike></span><span class="badge badge-success discount">11% OFF</span><br>
-                            <a href="reg.html" class="btn">JOIN NOW</a></div>
-                          </div>
-                          </div>
-                    </div>
-                    <div class="col-md-4">
-                          <div class="card">
-                          <div class="card-header">
-                            <span class="badge badge-premium">PREMIUM</span>
-                          </div>
-                          <div class="card-body">
-                            <h3 class="card-title">Game & App Development</h3>
-                            <span class="text-muted classes">144 classes</span>
-                            <span class="text-muted session">Rs. 660/- per session</span>
-                            <hr>
-                            <div class="card-text"><p class="text-muted">TOPICS COVERED</p><p>Game Design, Machine Learning models, Apps published on playstore.</p>
-                            <p class="text-muted">
-                              TOOLS
-                            </p>
-                            <table class="table">
-                              <tr>
-                                  <td><i class="fab fa-app-store"></i> Application Inventor</td>
-                                  <td><i class="fas fa-laptop-code"></i> Code Editor</td>
-                              </tr>
-                              <tr>
-                                  <td><i class="fab fa-linode"></i> Scratch</td>
-                              </tr>
-                            </table>
-                            <p class="text-muted">
-                              PROJECTS
-                            </p>
-                            <table class="table">
-                              <tr>
-                                  <td><i class="fab fa-android"></i> Android Application</td>
-                                  <td><i class="fas fa-music"></i> Musical Band</td>
-                              </tr>
-                              <tr>
-                                  <td><i class="fas fa-robot"></i> Artificial Intelligence</td>
-                                  <td><i class="fas fa-chess"></i> Games</td>
-                              </tr>
-                              <tr>
-                                  <td><i class="fab fa-html5"></i> Web Page Design</td>
-                              </tr>
-                            </table>
-                            <a href="#">KNOW MORE ABOUT CURRICULUM</a></div>
-                            <div class="card-footer">
-                            <hr>
-                            <span><b class="price"> Rs. 95,000</b><strike class="text-muted striked">Rs. 1,08,000</strike></span><span class="badge badge-success discount">12% OFF</span><br>
-                            <a href="reg.html" class="btn">JOIN NOW</a></div>
-                          </div>
-                          </div>
-                    </div>
-                </div>
-            </div>
-
-            <div id="three" class="w3-container city" style="display:none">
-              <div class="row">
-                    <div class="col-md-4">
-                          <div class="card">
-                          <div class="card-header">
-                            <span class="badge badge-info">BASIC</span>
-                          </div>
-                          <div class="card-body">
-                            <h3 class="card-title">Coding Fundamentals</h3>
-                            <span class="text-muted classes">8 classes</span>
-                            <span class="text-muted session">Rs. 700/- per session</span>
-                            <hr>
-                            <div class="card-text"><p class="text-muted">TOPICS COVERED</p><p>Game Design, Machine Learning models, Apps published on playstore.</p>
-                            <p class="text-muted">
-                              TOOLS
-                            </p>
-                            <table class="table">
-                              <tr>
-                                  <td><i class="fab fa-app-store"></i> Application Inventor</td>
-                                  <td><i class="fas fa-laptop-code"></i> Code Editor</td>
-                              </tr>
-                              <tr>
-                                  <td><i class="fab fa-linode"></i> Scratch</td>
-                              </tr>
-                            </table>
-                            <p class="text-muted">
-                              PROJECTS
-                            </p>
-                            <table class="table">
-                              <tr>
-                                  <td><i class="fab fa-android"></i> Android Application</td>
-                                  <td><i class="fas fa-music"></i> Musical Band</td>
-                              </tr>
-                              <tr>
-                                  <td><i class="fas fa-robot"></i> Artificial Intelligence</td>
-                                  <td><i class="fas fa-chess"></i> Games</td>
-                              </tr>
-                              <tr>
-                                  <td><i class="fab fa-html5"></i> Web Page Design</td>
-                              </tr>
-                            </table>
-                            <a href="#">KNOW MORE ABOUT CURRICULUM</a></div>
-                            <div class="card-footer">
-                            <hr>
-                            <span><b class="price"> Rs. 5600</b><strike class="text-muted striked">Rs. 6000</strike></span><span class="badge badge-success discount">7% OFF</span>
-                            <a href="reg.html" class="btn">JOIN NOW</a></div>
-                          </div>
-                          </div>
-                    </div>
-                    <div class="col-md-4">
-                          <div class="card">
-                          <div class="card-header">
-                            <span class="badge badge-standard">STANDARD</span>
-                          </div>
-                          <div class="card-body">
-                            <h3 class="card-title">Advanced Coding</h3>
-                            <span class="text-muted classes">48 classes</span>
-                            <span class="text-muted session">Rs. 667/- per session</span>
-                            <hr>
-                            <div class="card-text"><p class="text-muted">TOPICS COVERED</p><p>Game Design, Machine Learning models, Apps published on playstore.</p>
-                            <p class="text-muted">
-                              TOOLS
-                            </p>
-                            <table class="table">
-                              <tr>
-                                  <td><i class="fab fa-app-store"></i> Application Inventor</td>
-                                  <td><i class="fas fa-laptop-code"></i> Code Editor</td>
-                              </tr>
-                              <tr>
-                                  <td><i class="fab fa-linode"></i> Scratch</td>
-                              </tr>
-                            </table>
-                            <p class="text-muted">
-                              PROJECTS
-                            </p>
-                            <table class="table">
-                              <tr>
-                                  <td><i class="fab fa-android"></i> Android Application</td>
-                                  <td><i class="fas fa-music"></i> Musical Band</td>
-                              </tr>
-                              <tr>
-                                  <td><i class="fas fa-robot"></i> Artificial Intelligence</td>
-                                  <td><i class="fas fa-chess"></i> Games</td>
-                              </tr>
-                              <tr>
-                                  <td><i class="fab fa-html5"></i> Web Page Design</td>
-                              </tr>
-                            </table>
-                            <a href="#">KNOW MORE ABOUT CURRICULUM</a></div>
-                            <div class="card-footer">
-                            <hr>
-                            <span><b class="price"> Rs. 32,000</b><strike class="text-muted striked">Rs. 36,000</strike></span><span class="badge badge-success discount">11% OFF</span><br>
-                            <a href="reg.html" class="btn">JOIN NOW</a></div>
-                          </div>
-                          </div>
-                    </div>
-                    <div class="col-md-4">
-                          <div class="card">
-                          <div class="card-header">
-                            <span class="badge badge-premium">PREMIUM</span>
-                          </div>
-                          <div class="card-body">
-                            <h3 class="card-title">Game & App Development</h3>
-                            <span class="text-muted classes">144 classes</span>
-                            <span class="text-muted session">Rs. 660/- per session</span>
-                            <hr>
-                            <div class="card-text"><p class="text-muted">TOPICS COVERED</p><p>Game Design, Machine Learning models, Apps published on playstore.</p>
-                            <p class="text-muted">
-                              TOOLS
-                            </p>
-                            <table class="table">
-                              <tr>
-                                  <td><i class="fab fa-app-store"></i> Application Inventor</td>
-                                  <td><i class="fas fa-laptop-code"></i> Code Editor</td>
-                              </tr>
-                              <tr>
-                                  <td><i class="fab fa-linode"></i> Scratch</td>
-                              </tr>
-                            </table>
-                            <p class="text-muted">
-                              PROJECTS
-                            </p>
-                            <table class="table">
-                              <tr>
-                                  <td><i class="fab fa-android"></i> Android Application</td>
-                                  <td><i class="fas fa-music"></i> Musical Band</td>
-                              </tr>
-                              <tr>
-                                  <td><i class="fas fa-robot"></i> Artificial Intelligence</td>
-                                  <td><i class="fas fa-chess"></i> Games</td>
-                              </tr>
-                              <tr>
-                                  <td><i class="fab fa-html5"></i> Web Page Design</td>
-                              </tr>
-                            </table>
-                            <a href="#">KNOW MORE ABOUT CURRICULUM</a></div>
-                            <div class="card-footer">
-                            <hr>
-                            <span><b class="price"> Rs. 95,000</b><strike class="text-muted striked">Rs. 1,08,000</strike></span><span class="badge badge-success discount">12% OFF</span><br>
-                            <a href="reg.html" class="btn">JOIN NOW</a></div>
-                          </div>
-                          </div>
-                    </div>
-                </div>
-            </div>
+  <div class="container">
+    <div class="curriculum">
+      <div class="row">
+        <div class="col-lg-6">
+          <h1 class="hi">Specially designed curriculum for young minds</h1>
+          <div class="text-center">
+            <a class="button btn" href="reg.html" type="button" target="_blank"><span>BOOK A FREE CLASS</span></a>
+          </div>
         </div>
-    </div>
-
-    <div class="container">
-        <div class="curriculum">
-            <div class="row">
-                <div class="col-lg-6">
-                    <h1 class="hi">Specially designed curriculum for young minds</h1>
-                    <div class="text-center">
-                    <a class="button btn" href="reg.html" type="button" target="_blank"><span>BOOK A FREE CLASS</span></a></div>
-                </div>
-                <div class="col-lg-6">
-                    <div class="row text-center">
-                        <div class="col-sm-4">
-                            <img src="{% static 'asset/websites.svg' %}" alt=""/>
-                <h4>Websites</h4>
-                        </div>
-                        <div class="col-sm-4">
-                            <img src="{% static 'asset/ai.svg' %}" alt=""/>
-                <h4>Artificial Intelligence</h4>
-                        </div>
-                        <div class="col-sm-4">
-                            <img src="{% static 'asset/3d-animation.svg' %}" alt=""/>
-                <h4>3D Animation</h4>
-                        </div>
-                    </div>
-                    <div class="row text-center">
-                        <div class="col-sm-4">
-                            <img src="{% static 'asset/video-games.svg' %}" alt=""/>
-                <h4>Video Games</h4></div>
-                        <div class="col-sm-4">
-                            <img src="{% static 'asset/apps.svg' %}" alt=""/>
-                <h4>Mobile Apps</h4></div>
-                        <div class="col-sm-4">
-                            <img src="{% static 'asset/VR.svg' %}" alt=""/>
-                <h4>AR/VR Applications</h4></div>
-                    </div>
-                </div>
+        <div class="col-lg-6">
+          <div class="row text-center">
+            <div class="col-sm-4">
+              <img src="{% static 'asset/websites.svg' %}" alt="" />
+              <h4>Websites</h4>
             </div>
+            <div class="col-sm-4">
+              <img src="{% static 'asset/ai.svg' %}" alt="" />
+              <h4>Artificial Intelligence</h4>
+            </div>
+            <div class="col-sm-4">
+              <img src="{% static 'asset/3d-animation.svg' %}" alt="" />
+              <h4>3D Animation</h4>
+            </div>
+          </div>
+          <div class="row text-center">
+            <div class="col-sm-4">
+              <img src="{% static 'asset/video-games.svg' %}" alt="" />
+              <h4>Video Games</h4>
+            </div>
+            <div class="col-sm-4">
+              <img src="{% static 'asset/apps.svg' %}" alt="" />
+              <h4>Mobile Apps</h4>
+            </div>
+            <div class="col-sm-4">
+              <img src="{% static 'asset/VR.svg' %}" alt="" />
+              <h4>AR/VR Applications</h4>
+            </div>
+          </div>
         </div>
+      </div>
     </div>
+  </div>
 </div>
 
 {% endblock %}
