@@ -2,7 +2,6 @@ from django.db import models
 from django.contrib.auth.models import User
 from embed_video.fields import EmbedVideoField
 # from django.utils.text import slugify
-# from ckeditor.fields import models.TextField
 
 class CourseCategory(models.Model):
     category_name = models.CharField(max_length=30)

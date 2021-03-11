@@ -41,7 +41,6 @@ INSTALLED_APPS = [
     # Modules
     'bootstrap4',
     'embed_video',
-    'ckeditor',
 
     # django-allauth 
     'django.contrib.sites',
