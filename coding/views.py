@@ -27,7 +27,7 @@ def coding_registration(request):
         school = request.POST.get('school')
         category = request.POST.get('category')
 
-        order_amount = 500*100
+        order_amount = 2*100
         order_currency = 'INR'
         order_receipt = 'order_rcptid_11'
 
