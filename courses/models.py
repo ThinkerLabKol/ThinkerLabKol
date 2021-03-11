@@ -50,7 +50,7 @@ class CourseRegistration(models.Model):
         verbose_name_plural = 'Course Registrations'
 
     def __str__(self):
-        return self.name
+        return self.name + " / " + self.course_name
 
 
 def pdf_directory_path(instance, filename):

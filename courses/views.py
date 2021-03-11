@@ -46,8 +46,7 @@ def course_details(request, id):
     course = Course.objects.get(id=id)
     user = request.user
     # Checking if user has registerd to current course and also paid for the course
-    validation = CourseRegistration.objects.filter(
-        course_name=course).filter(email=user.email).filter(paid=True)
+    validation = CourseRegistration.objects.filter(course_name=course).filter(email=user.email).filter(paid=True)
 
     context = {
         'course': course,

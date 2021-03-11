@@ -100,7 +100,7 @@
             <div id="video" class="collapse">
 
                 <!-- If user has not registered to the course, then displaying only one lesson -->
-                {% if not registered %}
+                {% if lesson %}
                 <div class="row row1 br">
                     <p class="size"><i class="far fa-file-alt"></i> Lecture 1 &nbsp; &nbsp; <a
                             href="{% url 'lesson-details' lesson.id %}"
