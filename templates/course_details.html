@@ -38,7 +38,7 @@
         <div class="col-md-2 align-middle text-center">
             <a class="btn atc" href="#" role="button">Add to Cart</a>
             {% if not registered %}
-            <a class="btn atc" href="{% url 'course-registration' course.id%}" role="button">Buy Now</a>
+            <a class="btn atc" href="{% url 'course-registration' course.id%}" role="button" style="margin-top: 5px;" >Buy Now</a>
             {% endif %}
         </div>
     </div>

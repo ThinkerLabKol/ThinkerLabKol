@@ -75,7 +75,7 @@ class Lessons(models.Model):
     #     return super(Lessons, self).save(*args, **kwargs)
 
     def __str__(self):
-        return self.lesson_title + " of " + str(self.course_name)
+        return self.lesson_title + " / " + str(self.course_name)
 
 class Reviews(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
