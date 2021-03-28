@@ -25,6 +25,7 @@ urlpatterns = [
     path('', include('user.urls')),
     path('', include('courses.urls')),
     path('', include('coding.urls')),
+    path('', include('quiz.urls')),
 ]
 if settings.DEBUG:
     urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

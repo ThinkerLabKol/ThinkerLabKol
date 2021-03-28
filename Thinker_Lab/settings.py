@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'user.apps.UserConfig',
     'courses.apps.CoursesConfig',
     'coding.apps.CodingConfig',
+    'quiz.apps.QuizConfig',
 
     # Modules
     'bootstrap4',

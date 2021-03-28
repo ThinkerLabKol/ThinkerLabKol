@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load bootstrap4 %}
+{% block content %}
+
+<div class="container">
+    <form action="" method="POST">
+        {% csrf_token %}
+
+        {% for question in questions %}
+        <h2>Question {{ forloop.counter }}: {{ question.question_title }} </h2>
+        <h3><input type="radio" name="{{ forloop.counter }}" value="{{ question.option1 }}"> Option 1: {{ question.option1 }} </h3>
+        <h3><input type="radio" name="{{ forloop.counter }}" value="{{ question.option2 }}"> Option 2: {{ question.option2 }} </h3>
+        <h3><input type="radio" name="{{ forloop.counter }}" value="{{ question.option3 }}"> Option 3: {{ question.option3 }} </h3>
+        <h3><input type="radio" name="{{ forloop.counter }}" value="{{ question.option4 }}"> Option 4: {{ question.option4 }} </h3>
+        
+        <h3 style="display: none; color:rgb(7, 185, 7)">Correct Answer: {{ question.correct_ans }}</h3>
+
+        <hr>
+        {% endfor %}
+
+        {% buttons %}
+        <button class="btn btn-success">Submit Answer</button>
+        {% endbuttons %}
+
+        {% comment %}
+        <!-- ============================ Pagination Starts ============================-->
+        <div class="w3-bar w3-black text-center">
+            <div class="pagination">
+                <span class="step-links">
+                    {% if page_obj.has_previous %}
+                    <a href="?page=1"><button class="w3-bar-item w3-button">First</button></a>
+                    <a href="?page={{ page_obj.previous_page_number }}"><button
+                            class="w3-bar-item w3-button">Previous</button></a>
+                    {% endif %}
+
+                    <a href="?page={{ page_obj.number }}"><button class="w3-bar-item w3-button">{{ page_obj.number }}</button></a>
+                    {% if page_obj.has_next %}
+                    <a href="?page={{ page_obj.next_page_number }}"><button class="w3-bar-item w3-button">Next</button></a>
+                    <a href="?page={{ page_obj.paginator.num_pages }}"><button class="w3-bar-item w3-button">Last</button></a>
+                    {% endif %}
+                </span>
+            </div>
+        </div>
+        <!-- ============================ Pagination Ends ============================-->
+        {% endcomment %}
+    </form>
+</div>
+
+{% endblock %}

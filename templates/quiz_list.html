@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<div class="container">
+    {% for quiz in quizes %}
+    <a href="{% url 'test' quiz.id %}">
+        <h1>{{ quiz.title }}</h1>
+    </a>
+
+    <hr>
+    {% endfor %}
+</div>
+
+{% endblock %}
