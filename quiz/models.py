@@ -30,6 +30,8 @@ class Record(models.Model):
     correct_ans = models.TextField()
     user_ans = models.TextField(default=' ', blank=True, null=True)
 
+    def __str__(self):
+        return self.question
 
 class Scorecard(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)

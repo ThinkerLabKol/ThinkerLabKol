@@ -44,3 +44,7 @@ def test(request, id):
     }
 
     return render(request, 'quiz.html', context)
+
+
+def grade_calculation(request):
+    pass

@@ -1,11 +1,197 @@
-{% extends 'base.html' %}
 {% load static %}
 
-{% block content %}
-<div class="container">
-    <h1>Your Payment has been successfully done!</h1>
-    <a href="{% url 'courses' %}">View More Courses</a><br>
-    <a href="{% url 'coding' %}">Explore Coding</a><br>
-    <a href="{% url 'Home' %}">Go to Home Page</a>
-</div>
-{% endblock %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="bootstrap.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+ 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+ 	<link rel="stylesheet" href="{% static 'css/success.css' %}">
+	<title>Thinker Lab - Let's think and build</title>
+	<link rel="icon" href="asset/favicon.png" sizes="192x192" />
+</head>
+<body id="page-top" data-target=".navbar">
+	<!-- ============================== Navbar Starts ============================== -->
+<nav class="navbar navbar-default">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#ss"
+                aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <img src="{% static 'asset/logo.png' %}" href="#page-top" class="navbar-brand" alt="Thinker Lab" />
+        </div>
+        <div class="collapse navbar-collapse" id="ss">
+            <ul class="nav navbar-nav navbar-left">
+                <li>
+                    <a href="{% url 'Home' %}"><b>HOME</b></a>
+                </li>
+                <li>
+                    <a href="{% url 'coding' %}"><b>CODING</b></a>
+                </li>
+                <li>
+                    <div class="dropdown">
+                        <button class="dropbtn">
+                            <b>COURSES</b>
+                            <i class="fa fa-chevron-down" aria-hidden="true"></i>
+                        </button>
+                        <div class="dropdown-content">
+                            <a href="#">NCERT</a><br />
+                            <a href="#">IIT JEE</a><br />
+                            <a href="#">WBJEE</a><br />
+                            <a href="#">BCECE</a><br />
+                            <a href="{% url 'courses' %}">DEVELOPMENT</a>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="dropdown">
+                        <button class="dropbtn">
+                            <b>EXAM</b>
+                            <i class="fa fa-chevron-down" aria-hidden="true"></i>
+                        </button>
+                        <div class="dropdown-content">
+                            <a href="{% url 'test-list' %}">BCECE</a><br />
+                            <a href="#">WBJEE</a><br />
+                            <a href="#">JEE MAINS</a><br />
+                            <a href="#">JEE ADVANCE</a><br />
+                            <a href="#">X BOARD</a><br />
+                            <a href="#">XII BOARD</a>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="dropdown">
+                        <button class="dropbtn">
+                            <b>STUDY MATERIAL</b>
+                            <i class="fa fa-chevron-down" aria-hidden="true"></i>
+                        </button>
+                        <div class="dropdown-content">
+                            <a href="#">RD Sharma</a><br />
+                            <a href="#">RS Agarwal</a><br />
+                            <a href="#">S Chan</a><br />
+                            <a href="#">NCERT (English)</a><br />
+                            <a href="#">NCERT (Hindi)</a><br />
+                            <a href="#">Cengage (G.Tewani)</a>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                {% if user.is_authenticated %}
+                    <li>
+                        <a href="{% url 'user-logout' %}" id="logreg"><b>LOGOUT</b></a>
+                    </li>
+                {% else %}
+                    <li><a href="{% url 'login-user' %}"><b>LOGIN</b></a></li>
+					<li><a href="{% url 'register-user' %}" id="reg"><b>REGISTER</b></a></li>
+                {% endif %}
+            </ul>
+        </div>
+    </div>
+</nav>
+<!-- ============================== Navbar Ends ============================== -->
+
+	<section class="payment_confirmation">
+		<div class="container">
+			<div class="text-center">
+				<div class="row">
+					<div class="col-md-5">
+						<div>
+						<img src="{% static 'asset/sucess.jpg' %}" class="img img-fluid" alt="image">
+						</div>
+					</div>
+					<div class="col-md-7 mx-auto text-center text">
+						<div class="content">
+						<h1>Your Payment has been successfully done!!</h1><br/>
+						<p>Thank you for your payment. Congratulations on taking the first step towards an awesome learning experience that awaits! We will be in contact with more details shortly. Till then, Happy Learning! </p><br/>
+						<a href="{% url 'courses' %}" class="btn btn-success btn-lg mt-5">View more Courses <i class="fas fa-book"></i></i></a>
+						<a href="{% url 'coding' %}" class="btn btn-success btn-lg mt-5">Explore Coding <i class="fas fa-laptop-code"></i></i></a>
+						<a href="{% url 'Home' %}" class="btn btn-success btn-lg mt-5">Return to
+						Home <i class="fas fa-home"></i></a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Footer Starts -->
+		<footer >
+        <div class="footer-below">
+            <div class="container">
+                <div class="row upper">
+                    <div class="footer-col col-md-3">
+                        <h4>CONTACT</h4>
+                        <p> <i class="fas fa-map-marker-alt"></i> <span>5th Floor Devi Market,
+							83, Shyama Prasad Mukherjee Rd,
+							Kolkata, West Bengal 700026, India</span><br><br>
+                        	<a href="#"><i class="fas fa-envelope"></i> rishavju21@gmail.com</a><br><br>
+							<a href="#"><i class="fas fa-mobile-alt"></i> 9113313639</a>
+						</p>
+                    </div>
+                    <div class="footer-col col-md-3">
+                        <h4>COMPANY</h4>
+                        <p><a href="#">About Us</a><br><a href="#">Gallery</a><br><a href="#">Blog & News</a><br><a href="#">FAQ's</a><br> <a href="#">Franchise</a><br></p>
+                    </div>
+                    <div class="footer-col col-md-3">
+                        <h4>LEGAL AND PRIVACY</h4>
+                        <p>
+                        	<a href="#">Terms and Conditions</a><br>
+                        	<a href="#">Privacy Policy</a><br>
+                        	<a href="#">Disclaimer</a><br>
+                        	<a href="#">Return Policy</a><br>
+                        </p>
+                    </div>
+                    <div class="footer-col col-md-3">
+                        <h4>DETAIL</h4>
+                        <p>
+                        	<a href="#">Team Members</a><br>
+                        	<a href="#">Teach With Us</a><br>
+                        	<a href="#">Campus Ambassador</a>
+                        </p>
+                        <ul class="list-inline">
+                        	<li>
+                                <a href="#" class="btn-social btn-outline" style="text-decoration: none"><i style="color:#83f2f7;" class="fab fa-twitter-square fa-2x"></i></a>
+                            </li>
+                            <li>
+                                <a href="#" class="btn-social btn-outline" style="text-decoration: none"><i style="color:#4267B2;" class="fab fa-facebook-square fa-2x"></i></a>
+                            </li>
+                            <li>
+                                <a href="#" class="btn-social btn-outline" style="text-decoration: none"><i style="color:pink;" class="fab fa-instagram fa-2x"></i></a>
+                            </li>
+                            <li>
+                                <a href="#" class="btn-social btn-outline" style="text-decoration: none"><i style="color:#2170b5;" class="fab fa-linkedin fa-2x"></i></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-9">
+                        &copy; 2020 Penseur Lab Educational Private Limited <a href="#">Thinkerlab.</a>
+                    </div>
+                    <div class="col-md-3">
+                    	<ul class="list-inline">
+                    		<li ><a href="#" style="color:white;">Privacy</a></li>
+                    		<li><a href="#" style="color:white;">Terms</a></li>
+                    		<li><a href="#" style="color:white;">Sitemap</a></li>
+                    		<li><a href="#" style="color:white;">Purchase</a></li>
+                    	</ul>
+                    </div>
+                </div>
+            </div></div>
+    	</footer>
+    	<!-- Footer Ends -->
+</body>
+</html>
