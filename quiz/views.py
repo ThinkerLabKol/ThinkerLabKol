@@ -25,6 +25,8 @@ def test(request, id):
     page_number = request.GET.get('page')
     page_obj = paginator.get_page(page_number)
 
+    context = {}
+
     if request.method == "POST":
         dic = request.POST
 
@@ -36,12 +38,13 @@ def test(request, id):
                 record = Record(quiz_name=quiz, user=request.user, question=question, correct_ans=question.correct_ans , user_ans=' ')
             record.save()
         
-        return HttpResponse("<h1> You test has been successfully submitted </h1>")
+        context['questions'] = questions
 
-    context = {
-        'questions': questions,
-        'page_obj': page_obj,
-    }
+        return render(request, 'quiz_completion.html', context)
+
+    
+    context['questions'] = questions
+    context['page_obj'] = page_obj
 
     return render(request, 'quiz.html', context)
 

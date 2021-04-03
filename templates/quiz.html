@@ -2,14 +2,6 @@
 {% load static %}
 {% load bootstrap4 %}
 {% block content %}
-<!-- <script>
-    $(document).ready(function () {
-        $("#submit-button").click(function () {
-            $(".correct_ans").show();
-            // $(".rb").attr("disabled", true);
-        });
-    });
-</script> -->
 
 <div class="container">
     <form action="" method="POST">
@@ -23,7 +15,6 @@
         <h3><input type="radio" name="{{ question.question_title }}" value="{{ question.option4 }}"> {{ question.option4 }} </h3>
 
         <h3 class="correct_ans" style="display: none; color:rgb(7, 185, 7)">Correct Answer: {{ question.correct_ans }}</h3>
-        <!-- <input type="text" name="user_ans" value="{{value}}" > -->
 
         <hr>
         {% endfor %}
